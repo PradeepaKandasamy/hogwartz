@@ -1,0 +1,457 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-highlight: var(--color-highlight);
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-text);
+  --color-nav: var(--color-nav-text);
+  --color-heading: var(--color-heading-text);
+  --font-magical: "Cinzel Decorative", serif;
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: Inter, sans-serif;
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-button-text: var(--color-button-text);
+  --color-border: var(--color-border);
+  --color-dark-block: var(--color-dark-block);
+  --color-accent-light: var(--color-accent-light);
+  --color-footer-bg: var(--color-footer-bg);
+  --color-footer-link: var(--color-footer-link);
+  --color-footer-paragraph: var(--color-footer-paragraph);
+  --color-footer-copy: var(--color-footer-copy);
+  
+  /* Additional backgrounds for light theme */
+  --color-bg-soft: var(--bg-light-soft);
+  --color-bg-cool: var(--bg-light-cool);
+  --color-bg-warm: var(--bg-light-warm);
+}
+
+@layer base {
+  :root {
+    /* Theme 1 - The Dark Arts (Minimal/Dark) */
+    --color-primary: #1A1A2E;
+    --color-secondary: #16213E;
+    --color-accent: #C9A84C;
+    --color-highlight: #E8C96D;
+    --color-background: #0F0F1A;
+    --color-text: #F0EDE6;
+    
+    --text-primary: #F0EDE6;
+    --text-secondary: #A0A0A0;
+    --text-muted: #6B7280;
+
+    /* Specific Contrast Variables */
+    --color-nav-text: #F0EDE6;
+    --color-heading-text: #F0EDE6;
+    --color-nav-hover: #D4AF37;
+    --color-nav-active: #D4AF37;
+    --color-logo: #F0EDE6;
+    --color-icon: #F0EDE6;
+
+    /* Footer Specific */
+    --color-footer-text: #F0EDE6;
+    --color-footer-heading: #E8C96D;
+
+    --color-button-text: #1A1A2E;
+    --color-border: rgba(240, 237, 230, 0.2);
+  }
+
+  /* Theme 2 - The Enchanted Scroll (Advanced/Light) */
+  .theme-enchanted, [data-theme="light"] {
+    --color-primary: #1E293B;  /* Balanced dark tone for main elements */
+    --color-secondary: #475569; /* Balanced tone for secondary elements */
+    --color-accent: #C9A84C;    /* Brand Magical Gold */
+    --color-highlight: #E8C96D; /* Highlight Gold */
+    --color-background: #FFFFFF;
+    --color-text: #475569;      /* Paragraph text tone */
+    
+    --text-primary: #1E293B;    /* High contrast main text */
+    --text-secondary: #475569;  /* Clearly visible paragraph text */
+    --text-muted: #64748B;      /* Sophisticated small text */
+    --text-accent: #C9A84C;
+
+    /* Specific Contrast Dark Blocks */
+    --color-dark-block: #1E293B;
+    --color-accent-light: #FFF8E7; /* Soft warm tone for subtle highlighting */
+
+    /* Specific Contrast Variables */
+    --color-nav-text: #1E293B;
+    --color-heading-text: #1E293B;
+    --color-nav-hover: #C9A84C;
+    --color-nav-active: #C9A84C;
+    --color-logo: #1E293B;
+    --color-icon: #1E293B;
+
+    /* Footer Specific (Maintain existing dark background for BRAND) */
+    /* USER RULE: Do NOT change footer background color */
+    --color-footer-heading: #C9A84C;
+    --color-footer-link: #F8FAFC;
+    --color-footer-paragraph: #CBD5E1;
+    --color-footer-copy: #94A3B8;
+    --color-footer-bg: #1E2A38;
+
+    --color-button-text: #1E293B;
+    --color-border: #E2E8F0;
+
+    /* Background Variances for Light Theme */
+    --bg-light-soft: #F8FAFC;
+    --bg-light-cool: #F1F5F9;
+    --bg-light-warm: #FFF8E7;
+  }
+
+  body {
+    @apply font-body transition-colors duration-500 min-h-screen text-base overflow-x-hidden;
+    background-color: var(--color-background);
+  }
+
+  /* --- CINEMATIC MAGICAL BACKGROUND (DARK THEME ONLY) --- */
+  body.theme-dark-arts {
+    background: 
+      radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 40%), /* Emerald Top Left */
+      radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 40%), /* Purple Bottom Right */
+      radial-gradient(circle at 50% 50%, rgba(15, 15, 26, 0.1) 0%, #050510 100%), /* Central Ambient Glow */
+      #05050A; /* Solid True Obsidian */
+    position: relative;
+  }
+
+  /* Animated Fog/Smoke Layers Overlay */
+  body.theme-dark-arts::before,
+  body.theme-dark-arts::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.15;
+    filter: blur(60px);
+  }
+
+  body.theme-dark-arts::before {
+    background: radial-gradient(ellipse at 50% 120%, rgba(16, 185, 129, 0.1) 0%, transparent 60%);
+    animation: magical-drift 30s ease-in-out infinite alternate;
+  }
+
+  body.theme-dark-arts::after {
+    background: radial-gradient(ellipse at 20% 10%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+    animation: magical-drift 45s ease-in-out infinite alternate-reverse;
+  }
+
+  @keyframes magical-drift {
+    0% { transform: translate(-5%, -5%) scale(1); }
+    100% { transform: translate(5%, 5%) scale(1.1); }
+  }
+
+  /* Hide default cursor on desktop for custom magical cursor only in dark theme */
+  @media (pointer: fine) {
+    body.theme-dark-arts * {
+      cursor: none !important;
+    }
+    
+    body.theme-enchanted * {
+      cursor: auto !important;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading text-text-primary;
+  }
+
+  .font-magical {
+    font-family: 'Cinzel Decorative', serif;
+  }
+
+  /* Tablet Specific Spacing */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    section {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .container {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  @keyframes fog-pan {
+    0% { background-position: 0% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .custom-fog-layer-1 {
+    animation: fog-pan 120s linear infinite;
+    background-size: 200% 100%;
+  }
+
+  .custom-fog-layer-2 {
+    animation: fog-pan 80s linear infinite reverse;
+    background-size: 300% 100%;
+  }
+}
+
+/* Base custom classes to support magic effects in Theme 2 */
+@layer components {
+  .theme-enchanted .magical-glow {
+    box-shadow: 0 0 15px var(--color-highlight), inset 0 0 10px var(--color-accent);
+  }
+
+  .theme-enchanted .magical-underline {
+    position: relative;
+  }
+
+  /* --- Hogwartz Digital Typography System --- */
+  
+  /* H1 / Hero Headings */
+  .hero-title {
+    @apply font-magical text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.2] text-text-primary;
+  }
+
+  /* H2 / Main Section Headings */
+  .section-h2 {
+    @apply font-magical text-4xl md:text-5xl lg:text-6xl leading-tight text-text-primary;
+  }
+
+  /* H3 / Sub-section & Card Headings */
+  .card-h3 {
+    @apply font-heading text-2xl md:text-3xl font-bold text-text-primary;
+  }
+
+  /* Main Paragraphs & Intros */
+  .text-intro {
+    @apply font-heading text-lg md:text-xl font-medium leading-relaxed text-text-secondary;
+  }
+
+  /* Standard Body Text */
+  .text-body {
+    @apply font-body text-base md:text-lg leading-relaxed text-text-secondary;
+  }
+
+  /* Small Text / Eyebrows / Badges */
+  .text-eyebrow {
+    @apply font-body text-xs md:text-sm font-semibold tracking-widest uppercase;
+  }
+
+  /* Buttons Text */
+  .btn-text {
+    @apply font-body font-bold tracking-wide text-base md:text-lg;
+  }
+}
+
+.theme-enchanted .magical-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: linear-gradient(90deg, transparent, var(--color-highlight), transparent);
+}
+
+/* Navigation Link Styles */
+.nav-link {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--color-nav-text);
+  transition: color 0.3s ease;
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: var(--color-nav-hover);
+}
+
+.nav-link.active {
+  color: var(--color-nav-active);
+  border-bottom: 2px solid var(--color-nav-active);
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(201, 168, 76, 0.3);
+}
+
+/* Ensure mobile links also follow theme */
+.mobile-nav-link {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--color-nav-text);
+  transition: color 0.3s ease;
+  display: block;
+}
+
+.mobile-nav-link:hover {
+  color: var(--color-nav-hover);
+}
+
+.mobile-nav-link.active {
+  color: var(--color-nav-active);
+  border-left: 2px solid var(--color-nav-active);
+  padding-left: 0.5rem;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(201, 168, 76, 0.3);
+}
+
+/* Logo Styles */
+.logo-title {
+  color: var(--color-logo);
+  transition: color 0.3s ease;
+}
+
+/* Icon Styles for Mobile */
+.mobile-menu-icon,
+.theme-toggle-icon {
+  color: var(--color-icon);
+  transition: color 0.3s ease;
+}
+
+/* Footer Text Effects */
+.theme-enchanted .footer-heading {
+  text-shadow: 0 0 4px rgba(201, 168, 76, 0.2);
+}
+
+.theme-enchanted .site-footer .font-magical {
+  color: var(--color-accent);
+  text-shadow: 0 0 4px rgba(201, 168, 76, 0.2);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.theme-enchanted .site-footer a:hover .font-magical {
+  color: var(--color-highlight);
+  text-shadow: 0 0 6px rgba(159, 123, 46, 0.3);
+}
+
+/* --- Magical Spell Card System --- */
+/* Styles moved to SpellCard.css to avoid redundancy and enable reconstruction */
+
+
+/* --- Scoped Background Image Implementation --- */
+/* Completely removed background effects for What We Offer */
+.what-we-offer {
+  background: none !important;
+}
+
+.what-we-offer::before,
+.what-we-offer::after {
+  content: none !important;
+  background: none !important;
+  display: none !important;
+}
+
+/* --- Scoped Snake Implementation (Footer Full-Width) --- */
+[data-theme="dark"] .footer-section::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  background: url("./assets/dual_snakes_bg.png") no-repeat center bottom;
+  background-size: cover;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: linear-gradient(to top, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 50%, transparent 100%);
+  filter: contrast(1.1) brightness(1.1);
+}
+
+[data-theme="dark"] .footer-section * {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- CINEMATIC MAGICAL ANIMATIONS (DARK THEME) --- */
+
+@keyframes floating-magical {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes pulse-magical-glow {
+  0% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.1); }
+  50% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); }
+  100% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.1); }
+}
+
+@keyframes particle-drift {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  20% { opacity: 0.8; }
+  80% { opacity: 0.8; }
+  100% { transform: translateY(-100px) translateX(20px); opacity: 0; }
+}
+
+@keyframes border-glow-flow {
+  0% { border-color: rgba(212, 175, 55, 0.2); }
+  50% { border-color: rgba(212, 175, 55, 0.6); }
+  100% { border-color: rgba(212, 175, 55, 0.2); }
+}
+
+.float-magical {
+  animation: floating-magical 6s ease-in-out infinite;
+}
+
+.pulse-glow-magical {
+  animation: pulse-magical-glow 4s ease-in-out infinite;
+}
+
+.glow-border-magical {
+  animation: border-glow-flow 5s ease-in-out infinite;
+}
+
+/* --- Section Isolation & Safety Net --- */
+[data-theme="dark"] .hero-section::before,
+[data-theme="dark"] .dark-hero-container::before,
+[data-theme="dark"] .about-section::before,
+[data-theme="dark"] .features-section::before,
+[data-theme="dark"] .projects-section::before,
+[data-theme="dark"] .contact-section::before {
+  content: none !important;
+  background: none !important;
+  display: none !important;
+}
+
+/* --- PROJECTS CINEMATIC FOREST (DARK THEME) --- */
+[data-theme="dark"] .projects-section {
+  position: relative;
+  /* Deep base gradient to blend with the forest image */
+  background: linear-gradient(to bottom, #05050A 0%, #050510 50%, #000 100%) !important;
+}
+
+[data-theme="dark"] .projects-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 350px;
+  background: url("./assets/forest_cinematic.png") no-repeat bottom center;
+  background-size: cover;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: linear-gradient(to top, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 60%, transparent 100%);
+  filter: brightness(0.7) contrast(1.2);
+}
+
+[data-theme="dark"] .projects-section > * {
+  position: relative;
+  z-index: 10;
+}
+
+/* Explicit background reset for contact-section */
+.contact-section {
+    background-image: none !important;
+}

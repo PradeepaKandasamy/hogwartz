@@ -1,0 +1,208 @@
+/* SpellCard.css - Clean & Sharp Infinite Loop Version */
+
+:root {
+  --card-gold: #D4AF37;
+  --card-gold-bright: #FCEABB;
+  --card-navy: #0A1128;
+  --card-black: #020408;
+  --glow-accent: rgba(212, 175, 55, 0.3);
+}
+
+/* --- Infinite Carousel Container --- */
+.slider-container {
+  position: relative;
+  width: 100%;
+  padding: 60px 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.slider-viewport {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+}
+
+/* --- Clean Magical Card --- */
+.spell-card {
+  position: relative;
+  width: 320px;
+  min-width: 320px;
+  height: 460px;
+  background: linear-gradient(135deg, var(--card-navy) 0%, var(--card-black) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  /* NO BLUR - Keeping it sharp */
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* Hover Effects */
+.spell-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  border-color: var(--card-gold);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.8), 0 0 15px var(--glow-accent);
+}
+
+/* Glowing Edge */
+.spell-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  border-image: linear-gradient(135deg, var(--card-gold), transparent, var(--card-gold)) 1;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.3;
+}
+
+/* Texture Overlay */
+.artifact-texture {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+  opacity: 0.05;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Header Section */
+.spell-card-header {
+  padding: 15px;
+  background: rgba(212, 175, 55, 0.03);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  text-align: center;
+  z-index: 5;
+}
+
+.spell-title {
+  font-family: 'Cinzel Decorative', serif;
+  color: var(--card-gold);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Visual Focus */
+.spell-card-image-container {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  background: #000;
+  z-index: 3;
+}
+
+.spell-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  filter: brightness(0.9);
+}
+
+.spell-card:hover .spell-card-image {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+/* Content Body */
+.spell-card-body {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 5;
+}
+
+.spell-card-description {
+  color: #a0a0a0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 10px;
+}
+
+/* Stats Row */
+.spell-card-stats {
+  display: grid;
+  grid-template-cols: repeat(3, 1fr);
+  gap: 10px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  color: var(--card-gold);
+  opacity: 0.6;
+}
+
+.stat-value {
+  font-size: 0.8rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Shimmer Effect */
+.spell-shine {
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 100%
+  );
+  z-index: 10;
+  pointer-events: none;
+  transform: skewX(-20deg);
+}
+
+.spell-card:hover .spell-shine {
+  animation: shimmer 1.5s ease;
+}
+
+@keyframes shimmer {
+  0% { left: -150%; }
+  100% { left: 150%; }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .spell-card { width: 280px; min-width: 280px; height: 420px; }
+}
+
+@media (max-width: 768px) {
+  .slider-viewport { overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
+  .slider-viewport::-webkit-scrollbar { display: none; }
+  .slider-track { gap: 15px; }
+  .spell-card { width: 260px; min-width: 260px; height: 400px; }
+}

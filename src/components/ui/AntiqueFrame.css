@@ -1,0 +1,228 @@
+/* AntiqueFrame.css */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+
+:root {
+  --frame-bg: #1A1A2E;
+  --gold-primary: #C9A84C;
+  --gold-light: #EAD7A4;
+  --gold-dark: #8B7330;
+  --shadow-deep: rgba(0, 0, 0, 0.8);
+}
+
+.antique-frame-container {
+  perspective: 1200px;
+  display: inline-block;
+  position: relative;
+  border-radius: 12px;
+}
+
+.antique-frame-outer {
+  position: relative;
+  background-color: var(--frame-bg);
+  padding: 40px; /* Thick carved border area */
+  border-radius: 4px; /* Museum frames are often more rectangular but slightly rounded at details */
+  
+  /* Multiple shadows to create elevation and depth */
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.7),
+    inset 0 0 40px rgba(0, 0, 0, 0.9),
+    inset 0 0 10px rgba(201, 168, 76, 0.4),
+    0 0 15px rgba(201, 168, 76, 0.15);
+  
+  overflow: visible; /* Let ornaments pop out a bit if needed */
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 1;
+  transform-style: preserve-3d;
+}
+
+/* Simulated Floral Carvings */
+.antique-frame-outer::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Texture overlay for wood/metal carved feel */
+.antique-frame-outer::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10 Q 50 0 90 10 Q 100 50 90 90 Q 50 100 10 90 Q 0 50 10 10' fill='none' stroke='%23C9A84C' stroke-opacity='0.05'/%3E%3C/svg%3E"),
+    radial-gradient(circle at 10% 10%, rgba(255,255,255,0.05) 0%, transparent 20%),
+    radial-gradient(circle at 90% 90%, rgba(255,255,255,0.05) 0%, transparent 20%);
+  opacity: 0.8;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  z-index: 2;
+}
+
+/* Golden Shine Animation */
+.gold-shine {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(234, 215, 164, 0.3) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  animation: shine 8s infinite linear;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(0deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(0deg); }
+}
+
+/* Corner Ornaments */
+.corner-ornament {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  z-index: 10;
+  color: var(--gold-primary);
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.8));
+  pointer-events: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.top-left { top: -10px; left: -10px; }
+.top-right { top: -10px; right: -10px; transform: rotate(90deg); }
+.bottom-left { bottom: -10px; left: -10px; transform: rotate(-90deg); }
+.bottom-right { bottom: -10px; right: -10px; transform: rotate(180deg); }
+
+.antique-frame-container:hover .corner-ornament {
+  color: var(--gold-light);
+  filter: drop-shadow(0 0 10px var(--gold-primary));
+}
+
+/* Inner Border */
+.antique-frame-inner {
+  position: relative;
+  border: 4px solid var(--gold-light);
+  padding: 10px;
+  background: var(--shadow-deep);
+  box-shadow: 
+    inset 0 10px 30px rgba(0, 0, 0, 1),
+    0 0 15px rgba(201, 168, 76, 0.5),
+    0 0 5px var(--gold-primary);
+  z-index: 5;
+  overflow: hidden;
+  transform: translateZ(20px); /* Lift the inner part for 3D depth */
+}
+
+.portrait-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portrait-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+  filter: contrast(1.1) brightness(0.9) sepia(0.2);
+}
+
+.antique-frame-container:hover .portrait-image {
+  transform: scale(1.1);
+}
+
+.antique-frame-container:hover .antique-frame-outer {
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.7),
+    inset 0 0 50px rgba(0, 0, 0, 1),
+    0 0 35px rgba(201, 168, 76, 0.3);
+}
+
+/* Magical Aura Effect */
+.magical-aura {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.15) 0%, transparent 70%);
+  filter: blur(20px);
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.antique-frame-container:hover .magical-aura {
+  opacity: 1;
+  animation: auraPulse 3s infinite alternate ease-in-out;
+}
+
+@keyframes auraPulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.1); opacity: 0.9; }
+}
+
+/* Dust Particles simulation */
+.dust-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.dust {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.3;
+  filter: blur(1px);
+}
+
+/* Flicker effect */
+.vintage-flicker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(201, 168, 76, 0.02);
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.antique-frame-container:hover .vintage-flicker {
+  opacity: 1;
+  animation: flicker 0.2s infinite;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.05; }
+  50% { opacity: 0.08; }
+  100% { opacity: 0.05; }
+}
