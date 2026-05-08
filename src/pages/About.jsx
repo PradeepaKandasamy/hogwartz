@@ -96,7 +96,6 @@ const About = () => {
 
     return (
         <div className={`relative overflow-x-hidden ${isDark ? 'theme-dark-arts' : 'theme-enchanted'} bg-background transition-colors duration-700`}>
-            {isDark && <MagicalAboutScene />}
             
             <Helmet>
                 <title>About Our Magic | Hogwartz Digital</title>
@@ -109,7 +108,8 @@ const About = () => {
                 animate="visible"
                 className="relative z-10"
             >
-                <motion.div variants={sectionVariants}>
+                <motion.div variants={sectionVariants} className="relative overflow-hidden">
+                    {isDark && <MagicalAboutScene />}
                     <AboutHero isDark={isDark} content={content} />
                 </motion.div>
                 

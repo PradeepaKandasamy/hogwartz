@@ -186,10 +186,34 @@ const WhatWeOffer = () => {
     }
 
     return (
-        <section id="services" className="what-we-offer py-24 px-6 transition-colors duration-500 overflow-hidden">
-            <div className="container mx-auto relative">
-                
-                <div className="flex flex-col items-center text-center mb-16">
+        <section id="services" className={`what-we-offer relative px-6 transition-colors duration-500 overflow-hidden ${isLight ? 'pt-12 pb-20' : 'py-24'}`}>
+            {/* Cinematic Background Atmosphere (Dark Theme Only) */}
+            {!isLight && (
+                <div className="what-we-offer-atmosphere">
+                    <div className="what-we-offer-bg-gradient" />
+                    <div className="magical-mist" />
+                    <div className="ambient-magical-glow" />
+                    
+                    {/* Floating Dust Particles */}
+                    {[...Array(12)].map((_, i) => (
+                        <div 
+                            key={i}
+                            className="dust-particle"
+                            style={{
+                                top: `${Math.random() * 100}%`,
+                                left: `${Math.random() * 100}%`,
+                                width: `${Math.random() * 3 + 1}px`,
+                                height: `${Math.random() * 3 + 1}px`,
+                                '--duration': `${Math.random() * 10 + 10}s`,
+                                animationDelay: `${Math.random() * 5}s`
+                            }}
+                        />
+                    ))}
+                </div>
+            )}
+
+            <div className="container mx-auto relative z-10">
+                <div className={`flex flex-col items-center text-center ${isLight ? 'mb-10' : 'mb-16'}`}>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

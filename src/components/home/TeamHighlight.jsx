@@ -60,8 +60,6 @@ const TeamHighlight = () => {
         { name: "Minerva McGonagall", role: "Creative Director" },
         { name: "Severus Snape", role: "Technical Wizard" },
         { name: "Hermione Granger", role: "Strategic Mastermind" },
-        { name: "Ron Weasley", role: "Experience Lead" },
-        { name: "Draco Malfoy", role: "Influence Lead" },
     ];
 
     return (
@@ -73,7 +71,7 @@ const TeamHighlight = () => {
             </div>
 
             <div className="container mx-auto relative z-10">
-                <div className="flex flex-col lg:flex-row gap-16 items-start">
+                <div className="flex flex-col lg:flex-row gap-16 items-center">
                     
                     {/* LEFT SIDE: TITLES & CTA */}
                     <div className="lg:w-1/3 flex flex-col gap-8 pt-4">
@@ -105,7 +103,7 @@ const TeamHighlight = () => {
 
                     {/* RIGHT SIDE: TEAM GRID */}
                     <div className="lg:w-2/3">
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+                        <div className="grid grid-cols-2 gap-6 md:gap-8">
                             {team.map((member, index) => (
                                 <TeamMemberCard 
                                     key={index} 

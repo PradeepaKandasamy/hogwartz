@@ -45,10 +45,13 @@ const ScrollingServices = () => {
                     {scrollItems.map((item, index) => (
                         <span
                             key={index}
-                            className={`font-heading text-2xl md:text-3xl tracking-widest uppercase transition-colors duration-500
+                            className={`font-heading text-2xl md:text-3xl tracking-[0.2em] uppercase transition-all duration-500
                                 ${item === '•' 
-                                    ? 'text-accent opacity-50' 
-                                    : (isLight ? 'text-primary' : 'text-background')
+                                    ? 'text-accent opacity-40 scale-150' 
+                                    : (isLight 
+                                        ? 'text-primary' 
+                                        : 'text-[#FCEABB] drop-shadow-[0_0_8px_rgba(252,234,187,0.4)] hover:text-white hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.6)]'
+                                      )
                                 }`}
                         >
                             {item}

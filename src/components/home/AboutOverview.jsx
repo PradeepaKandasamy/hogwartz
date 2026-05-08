@@ -10,8 +10,8 @@ const AboutOverview = () => {
     const isLight = theme === 'enchanted-scroll';
 
     return (
-        <section className={`about-section relative py-24 px-6 transition-colors duration-500 overflow-visible
-            ${isLight ? 'bg-[#F8FAFC] z-10' : 'bg-background z-10'}`}>
+        <section className={`about-section relative px-6 transition-colors duration-500 overflow-visible
+            ${isLight ? 'bg-[#F8FAFC] z-10 pt-16 pb-12' : 'bg-background z-10 py-24'}`}>
             
             {/* 💨 DARK THEME: STATIC SMOKE EFFECT */}
             {!isLight && (
@@ -133,7 +133,7 @@ const AboutOverview = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: false, margin: "-100px" }}
                     transition={{ duration: 0.8 }}
-                    className={`space-y-8 ${isLight ? 'lg:order-2 lg:min-h-[150vh] lg:pt-10' : 'md:order-1'}`}
+                    className={`space-y-8 ${isLight ? 'lg:order-2 lg:pt-0' : 'md:order-1'}`}
                 >
                     <div>
                         <div className="flex items-center gap-2 mb-4">
@@ -144,16 +144,16 @@ const AboutOverview = () => {
                         </div>
 
                         <h2 className={`font-magical text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight
-                            ${isLight ? 'text-[#1E293B] !font-heading !font-extrabold' : 'section-title'}
+                            ${isLight ? 'text-[#1E293B] !font-heading !font-extrabold' : 'section-title !text-white'}
                         `}>
                             {isLight 
                                 ? <>Built for Growth. <br /> <span className="text-accent underline underline-offset-8">Designed for Scale.</span></>
-                                : <>Not Just Another Agency. <br /> <span className="text-secondary opacity-70">A Coven of Creators.</span></>
+                                : <>Not Just Another Agency. <br /> <span className="text-[#FCEABB] drop-shadow-[0_0_15px_rgba(252,234,187,0.3)] italic">A Coven of Creators.</span></>
                             }
                         </h2>
 
                         <p className={`font-body text-lg mb-8 leading-relaxed
-                            ${isLight ? 'text-text-muted font-medium' : 'text-foreground/80'}
+                            ${isLight ? 'text-text-muted font-medium' : 'text-[#F0EDE6]/90 font-medium'}
                         `}>
                             {isLight
                                 ? "We blend innovative design with high-end engineering to create digital experiences that deliver measurable business results. From custom platform development to strategic digital marketing, we are the architects of your digital success."
@@ -162,7 +162,7 @@ const AboutOverview = () => {
                         </p>
 
                         <p className={`font-body text-lg mb-8 leading-relaxed hidden lg:block
-                            ${isLight ? 'text-text-muted' : 'hidden'}
+                            ${isLight ? 'text-text-muted' : 'text-[#F0EDE6]/70 italic border-l-2 border-accent/30 pl-6'}
                         `}>
                             {isLight
                                 ? "Our approach is rooted in data-driven strategy and creative excellence. we transcend traditional digital marketing by focusing on the core user experience and your unique brand identity."

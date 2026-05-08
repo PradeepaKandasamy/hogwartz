@@ -290,7 +290,7 @@ const MagicalAboutScene = () => {
     }, []);
 
     return (
-        <div className="fixed inset-0 z-0 bg-[#020205]">
+        <div className="absolute top-0 left-0 w-full h-full z-0 bg-[#020205]">
             <Canvas
                 shadows
                 dpr={[1, 2]}
