@@ -260,10 +260,10 @@ const ServicesHero = ({ isDark, content }) => {
                                     <div className={`absolute inset-0 border-2 rounded-full border-dashed border-accent`}></div>
                                 </motion.div>
                             </div>
-                            <h1 className="font-magical font-bold text-4xl md:text-5xl lg:text-6xl mb-4 leading-[1.2] text-text-primary">
+                            <h1 className="font-magical font-bold text-4xl md:text-5xl lg:text-6xl mb-4 leading-[1.2] text-[#F0EDE6] drop-shadow-[0_0_15px_rgba(252,234,187,0.3)]">
                                 {content.hero.title}
                             </h1>
-                            <p className="font-body text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed mb-10">
+                            <p className="font-body text-lg md:text-xl text-[#F0EDE6]/80 max-w-2xl mx-auto leading-relaxed mb-10">
                                 {content.hero.subtitle}
                             </p>
                             <NavLink to="/contact" className={`px-10 py-5 rounded-full font-bold font-body tracking-wide text-base md:text-lg flex items-center gap-3 transition-all bg-accent text-primary hover:bg-highlight shadow-[0_0_20px_rgba(201,168,76,0.3)]`}>

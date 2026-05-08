@@ -210,6 +210,7 @@
 .hero-content {
   position: relative;
   z-index: 10;                          /* layer 10 — on top of everything */
+  pointer-events: auto;                 /* ensure interactivity */
   text-align: center;
   width: 100%;
   max-width: 860px;

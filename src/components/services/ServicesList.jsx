@@ -25,12 +25,12 @@ const ServicesList = ({ isDark, content, activeDetailed, setActiveDetailed }) =>
 
                                 <div className={`transition-all duration-500 relative z-10
                                     ${isDark
-                                        ? 'spell-icon-container !mb-0'
+                                        ? 'text-[#FCEABB] group-hover:drop-shadow-[0_0_10px_rgba(252,234,187,0.5)]'
                                         : 'text-primary group-hover:scale-110'}`}>
                                     {s.icon}
                                 </div>
                                 <h4 className={`font-bold relative z-10
-                                    ${isDark ? 'spell-title text-2xl' : 'font-heading text-2xl text-text-primary'}`}>
+                                    ${isDark ? 'spell-title text-2xl !text-[#F0EDE6]' : 'font-heading text-2xl text-text-primary'}`}>
                                     {s.name}
                                 </h4>
                                 <span className={`text-[10px] md:text-xs uppercase tracking-widest font-bold py-1 px-3 rounded-full font-body relative z-10
@@ -54,17 +54,17 @@ const ServicesList = ({ isDark, content, activeDetailed, setActiveDetailed }) =>
                                     key={i}
                                     onClick={() => setActiveDetailed(i)}
                                     className={`w-full text-left p-6 rounded-2xl border transition-all duration-300 flex items-center justify-between group ${activeDetailed === i
-                                            ? (isDark ? 'bg-accent/10 border-accent text-accent' : 'bg-primary border-primary text-white')
-                                            : (isDark ? 'bg-secondary/10 border-accent/10' : 'bg-white border-primary/5')
+                                            ? (isDark ? 'bg-accent/10 border-accent text-[#FCEABB] drop-shadow-[0_0_10px_rgba(252,234,187,0.2)]' : 'bg-primary border-primary text-white')
+                                            : (isDark ? 'bg-secondary/10 border-accent/10 text-[#F0EDE6]/50 hover:text-[#F0EDE6]/80' : 'bg-white border-primary/5')
                                         }`}
                                 >
                                     <div className="flex items-center gap-4">
-                                        <div className="p-3 rounded-xl bg-opacity-10 group-hover:scale-110 transition-transform">
+                                        <div className={`p-3 rounded-xl bg-opacity-10 group-hover:scale-110 transition-transform ${isDark && (activeDetailed === i ? 'text-[#FCEABB]' : 'text-[#F0EDE6]/40')}`}>
                                             {s.icon}
                                         </div>
                                         <span className="font-heading text-lg md:text-xl font-bold">{s.title}</span>
                                     </div>
-                                    <ChevronRight className={`w-5 h-5 transition-transform ${activeDetailed === i ? 'rotate-90' : ''}`} />
+                                    <ChevronRight className={`w-5 h-5 transition-transform ${activeDetailed === i ? 'rotate-90' : ''} ${isDark && (activeDetailed === i ? 'text-[#FCEABB]' : 'text-[#F0EDE6]/30')}`} />
                                 </button>
                             ))}
                         </div>
@@ -80,18 +80,18 @@ const ServicesList = ({ isDark, content, activeDetailed, setActiveDetailed }) =>
                                     transition={{ duration: 0.5 }}
                                     className={`p-10 md:p-16 rounded-[3rem] border h-full ${isDark ? 'bg-secondary/20 border-accent/10' : 'bg-white shadow-2xl border-primary/5'}`}
                                 >
-                                    <h2 className="font-magical text-4xl md:text-5xl lg:text-6xl mb-6 text-text-primary leading-tight">{content.detailed[activeDetailed].title}</h2>
-                                    <p className={`font-heading text-lg md:text-xl italic mb-8 ${isDark ? 'text-highlight' : 'text-primary'}`}>
+                                    <h2 className="font-magical text-4xl md:text-5xl lg:text-6xl mb-6 text-[#F0EDE6] leading-tight drop-shadow-[0_0_10px_rgba(255,255,255,0.1)]">{content.detailed[activeDetailed].title}</h2>
+                                    <p className={`font-heading text-lg md:text-xl italic mb-8 ${isDark ? 'text-[#FCEABB] drop-shadow-[0_0_8px_rgba(252,234,187,0.3)]' : 'text-primary'}`}>
                                         "{content.detailed[activeDetailed].summary}"
                                     </p>
-                                    <p className="font-body text-base md:text-lg text-text-secondary leading-relaxed mb-10">
+                                    <p className={`font-body text-base md:text-lg leading-relaxed mb-10 ${isDark ? 'text-[#F0EDE6]/80' : 'text-text-secondary'}`}>
                                         {content.detailed[activeDetailed].description}
                                     </p>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         {content.detailed[activeDetailed].features.map((f, i) => (
                                             <div key={i} className="flex gap-3 items-center">
-                                                <Zap className="w-5 h-5 text-accent" />
-                                                <span className="font-bold font-body text-sm md:text-base text-text-primary">{f}</span>
+                                                <Zap className={`w-5 h-5 ${isDark ? 'text-[#FCEABB]' : 'text-accent'}`} />
+                                                <span className={`font-bold font-body text-sm md:text-base ${isDark ? 'text-[#F0EDE6]/90' : 'text-text-primary'}`}>{f}</span>
                                             </div>
                                         ))}
                                     </div>

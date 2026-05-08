@@ -45,8 +45,8 @@ const HeroSection = () => {
         <section className={`hero-section relative min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden transition-colors duration-500
             ${isDark ? 'bg-[#05050A]' : 'bg-[#F8FAFC]'}`}>
 
-            {/* --- BACKGROUND LAYER (Z-0) --- */}
-            <div className="absolute inset-0 z-0 pointer-events-none w-full h-full transform-gpu">
+            {/* --- HERO CONTENT & BACKGROUND --- */}
+            <div className={`absolute inset-0 w-full h-full transform-gpu ${isDark ? 'z-10' : 'z-0 pointer-events-none'}`}>
                 <AnimatePresence mode="wait">
                     {!isDark && (
                         <motion.div
