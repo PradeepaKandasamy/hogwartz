@@ -220,6 +220,17 @@
     @apply font-magical text-4xl md:text-5xl lg:text-6xl leading-tight text-text-primary;
   }
 
+  /* Mobile-only heading scaling for What We Offer */
+  @media (max-width: 420px) {
+    .what-we-offer .section-title {
+      font-size: clamp(2.6rem, 3.8vw + 1.6rem, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      max-width: 100%;
+      word-break: normal;
+    }
+  }
+
   /* H3 / Sub-section & Card Headings */
   .card-h3 {
     @apply font-heading text-2xl md:text-3xl font-bold text-text-primary;
@@ -454,4 +465,20 @@
 /* Explicit background reset for contact-section */
 .contact-section {
     background-image: none !important;
+}
+
+/* Ensure scrolling services border persists on all interaction states */
+.features-section,
+.features-section:hover,
+.features-section:active,
+.features-section:focus,
+.features-section:focus-within {
+    border-top-style: solid !important;
+    border-bottom-style: solid !important;
+    border-color: rgba(201, 168, 76, 0.2) !important;
+}
+
+.features-section *:hover {
+    border-top-style: unset;
+    border-bottom-style: unset;
 }

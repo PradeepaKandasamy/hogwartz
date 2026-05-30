@@ -101,19 +101,19 @@ const ProjectsPreview = () => {
             ${isDark ? 'bg-[#05050A]' : 'bg-background'}`}>
             <div className="container mx-auto">
 
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 md:mb-16 gap-6 md:gap-6 text-center md:text-left">
                     <div className="max-w-2xl px-4">
-                        <span className="font-heading text-lg md:text-xl uppercase tracking-[0.2em] text-accent font-semibold mb-4 block">
+                        <span className="font-heading text-sm md:text-xl uppercase tracking-[0.15em] md:tracking-[0.2em] text-accent font-semibold mb-3 block">
                             {!isDark ? 'Selected Portfolio' : 'THE ARCANE VAULT'}
                         </span>
-                        <h2 className={`font-magical text-5xl md:text-6xl lg:text-7xl leading-tight
+                        <h2 className={`font-magical text-[clamp(2.2rem,8vw,3rem)] md:text-6xl lg:text-7xl leading-[1.1] md:leading-tight
                             ${isDark ? 'text-white' : 'text-text-primary'}`}>
                             {!isDark ? 'Featured Work' : 'MASTERWORK ARTIFACTS'}
                         </h2>
                     </div>
                     <NavLink
                         to="/projects"
-                        className={`font-body px-8 py-4 border-2 font-bold tracking-widest uppercase text-xs transition-all rounded-xl
+                        className={`font-body px-8 py-4 border-2 font-bold tracking-widest uppercase text-xs transition-all rounded-xl w-full md:w-auto text-center
                             ${!isDark 
                                 ? 'bg-dark-block border-dark-block text-accent-light hover:bg-dark-block/90' 
                                 : 'border-accent/30 text-accent hover:bg-accent hover:text-primary shadow-[0_0_20px_rgba(212,175,55,0.1)]'

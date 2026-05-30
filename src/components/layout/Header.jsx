@@ -20,6 +20,17 @@ const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Escape key listener for mobile menu
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') setIsOpen(false);
+        };
+        if (isOpen) {
+            window.addEventListener('keydown', handleKeyDown);
+        }
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [isOpen]);
+
     const navLinks = [
         { title: 'Home', path: '/' },
         { title: 'About', path: '/about' },
@@ -147,10 +158,23 @@ const Header = () => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
+                        onClick={(e) => {
+                            if (e.target === e.currentTarget) setIsOpen(false);
+                        }}
                         className={`lg:hidden absolute top-0 left-0 w-full min-h-screen pt-28 pb-10 px-6 backdrop-blur-2xl z-[90]
                             ${isDark ? 'bg-black/95' : 'bg-white/95'}
                         `}
                     >
+                        {/* Close Button Inside Menu */}
+                        <button 
+                            onClick={() => setIsOpen(false)}
+                            className={`absolute top-6 right-6 p-2 rounded-full transition-all duration-300 hover:rotate-90 hover:scale-110
+                                ${isDark ? 'bg-white/10 text-white hover:bg-accent/20 hover:text-accent' : 'bg-black/10 text-primary hover:bg-accent/10 hover:text-accent'}
+                            `}
+                        >
+                            <X className="w-8 h-8" />
+                        </button>
+
                         <div className="flex flex-col gap-6">
                             {navLinks.map((link, i) => (
                                 <motion.div

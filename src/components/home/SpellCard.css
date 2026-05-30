@@ -12,15 +12,16 @@
 .slider-container {
   position: relative;
   width: 100%;
-  padding: 60px 0;
+  padding: 80px 0;
   overflow: hidden;
   background: transparent;
 }
 
 .slider-viewport {
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
+  padding: 10px 0;
 }
 
 .slider-track {
@@ -36,36 +37,64 @@
   min-width: 320px;
   height: 460px;
   background: linear-gradient(135deg, var(--card-navy) 0%, var(--card-black) 100%);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: none !important;
   border-radius: 12px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow:
+    /* Golden border ring — rendered via shadow spread, immune to overflow/transform clipping */
+    0 0 0 1px rgba(212, 175, 55, 0.3),
+    /* Ambient depth shadow */
+    0 8px 30px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.4s ease;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   z-index: 1;
+  will-change: transform;
   /* NO BLUR - Keeping it sharp */
   filter: none !important;
   opacity: 1 !important;
 }
 
-/* Hover Effects */
+/* Hover Effects - transform handled by framer-motion, only style shadow here */
 .spell-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  border-color: var(--card-gold);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.8), 0 0 15px var(--glow-accent);
+  box-shadow:
+    /* Bright golden border ring — full opacity, all 4 sides equal */
+    0 0 0 1.5px #D4AF37,
+    /* Layer 1: Tight sharp golden glow */
+    0 0 8px rgba(212, 175, 55, 0.5),
+    /* Layer 2: Medium ambient glow */
+    0 0 20px rgba(212, 175, 55, 0.25),
+    /* Layer 3: Soft outer atmospheric aura */
+    0 0 40px rgba(212, 175, 55, 0.12),
+    /* Layer 4: Deep ambient shadow */
+    0 4px 25px rgba(0, 0, 0, 0.6);
 }
 
-/* Glowing Edge */
+.spell-card:active,
+.spell-card:focus {
+  box-shadow:
+    0 0 0 1.5px rgba(212, 175, 55, 0.5),
+    0 0 6px rgba(212, 175, 55, 0.4),
+    0 0 15px rgba(212, 175, 55, 0.15),
+    0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Inner glow highlight - intensifies on hover */
 .spell-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  border: 1px solid transparent;
-  border-image: linear-gradient(135deg, var(--card-gold), transparent, var(--card-gold)) 1;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.08);
   pointer-events: none;
   z-index: 10;
-  opacity: 0.3;
+  transition: box-shadow 0.4s ease;
+}
+
+.spell-card:hover::before {
+  box-shadow:
+    inset 0 0 0 1px rgba(212, 175, 55, 0.2),
+    inset 0 0 12px rgba(212, 175, 55, 0.05);
 }
 
 /* Texture Overlay */
@@ -99,6 +128,9 @@
 /* Visual Focus */
 .spell-card-image-container {
   height: 220px;
+  min-height: 220px;
+  max-height: 220px;
+  flex-shrink: 0;
   position: relative;
   overflow: hidden;
   margin: 10px;
@@ -112,6 +144,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
   transition: transform 0.6s ease;
   filter: brightness(0.9);
 }
@@ -129,6 +163,7 @@
   flex-direction: column;
   justify-content: space-between;
   z-index: 5;
+  overflow: hidden;
 }
 
 .spell-card-description {
@@ -262,11 +297,32 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .spell-card { width: 280px; min-width: 280px; height: 420px; }
+  .spell-card-image-container { height: 190px; min-height: 190px; max-height: 190px; }
+  .spell-card-body { padding: 15px; }
 }
 
 @media (max-width: 768px) {
-  .slider-viewport { overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
+  .slider-viewport { overflow: hidden; scrollbar-width: none; -ms-overflow-style: none; }
   .slider-viewport::-webkit-scrollbar { display: none; }
   .slider-track { gap: 15px; }
   .spell-card { width: 260px; min-width: 260px; height: 400px; }
+  .spell-card-image-container { 
+    height: 170px; 
+    min-height: 170px; 
+    max-height: 170px; 
+    width: calc(100% - 16px);
+    margin: 8px auto; 
+    display: block;
+  }
+  .spell-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .spell-card-header { padding: 12px; }
+  .spell-title { font-size: 0.95rem; letter-spacing: 1.5px; }
+  .spell-card-body { padding: 12px; }
+  .spell-card-description { font-size: 0.82rem; line-height: 1.5; margin-bottom: 8px; }
+  .spell-card-stats { gap: 6px; padding-top: 10px; }
 }

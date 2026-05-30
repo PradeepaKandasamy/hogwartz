@@ -489,6 +489,37 @@
 }
 
 @media (max-width: 480px) {
-  .hero-stats { gap: 1rem; flex-wrap: wrap; }
-  .eyebrow-line { flex: 0 0 20px; }
+  .hero-content {
+    padding: 0 1rem; /* reduce padding slightly to give stats more horizontal breathing room */
+  }
+
+  .hero-stats {
+    width: 100%;
+    max-width: 100%;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding-top: 1.2rem;
+  }
+
+  .stat-item {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .stat-value {
+    font-size: clamp(1.1rem, 4.5vw, 1.25rem);
+  }
+
+  .stat-label {
+    font-size: clamp(0.52rem, 2vw, 0.6rem);
+    letter-spacing: clamp(0.12em, 1.5vw, 0.22em);
+    white-space: nowrap;
+  }
+
+  .eyebrow-line {
+    flex: 0 0 20px;
+  }
 }
+

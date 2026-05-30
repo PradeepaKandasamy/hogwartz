@@ -199,7 +199,7 @@ const Projects = () => {
             
             <Testimonials isDark={isDark} />
 
-            <ProjectsCTA isDark={isDark} />
+            <ProjectsCTA />
 
             <CaseStudy 
                 project={selectedProject} 

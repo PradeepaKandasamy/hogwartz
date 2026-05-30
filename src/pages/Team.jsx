@@ -31,7 +31,7 @@ const Team = () => {
 
             <TeamQuotes isDark={isDark} />
 
-            <TeamCTA isDark={isDark} />
+            <TeamCTA />
         </div>
     );
 };

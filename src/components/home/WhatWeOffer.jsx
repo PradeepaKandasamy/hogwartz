@@ -1,4 +1,4 @@
-import { motion, useAnimation, useMotionValue } from 'framer-motion';
+import { motion, useMotionValue, useAnimationFrame, animate } from 'framer-motion';
 import { Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import './SpellCard.css';
@@ -27,7 +27,6 @@ const SpellCard = ({ title, description, image, stats }) => {
     return (
         <motion.div 
             className="spell-card group"
-            whileHover={{ y: -10, scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
             <div className="artifact-texture" />
@@ -51,7 +50,6 @@ const SpellCard = ({ title, description, image, stats }) => {
                         <span className="stat-value">{stats.power}</span>
                     </div>
                     <div className="stat-item">
-                        <span className="stat-label">Form</span>
                         <span className="stat-value">{stats.type}</span>
                     </div>
                     <div className="stat-item">
@@ -64,11 +62,55 @@ const SpellCard = ({ title, description, image, stats }) => {
     );
 };
 
+const ScrollingTrack = ({ items, direction = -1, isInteracting, onInteractionStart, onInteractionEnd }) => {
+    // Mobile dimensions: 260px card width + 15px gap = 275px
+    const cardWidth = 275; 
+    const totalWidth = items.length * cardWidth;
+    const loopedItems = [...items, ...items, ...items, ...items, ...items, ...items, ...items, ...items, ...items, ...items]; 
+    const x = useMotionValue(-totalWidth * 5);
+
+    useEffect(() => {
+        const unsubscribe = x.onChange((currentX) => {
+            if (currentX <= -totalWidth * 6) {
+                x.set(currentX + totalWidth);
+            } else if (currentX >= -totalWidth * 4) {
+                x.set(currentX - totalWidth);
+            }
+        });
+        return () => unsubscribe();
+    }, [totalWidth, x]);
+
+    useAnimationFrame((time, delta) => {
+        if (isInteracting) return;
+        const safeDelta = Math.min(delta, 50);
+        const moveBy = 0.05 * safeDelta * direction;
+        x.set(x.get() + moveBy);
+    });
+
+    return (
+        <div className="slider-viewport overflow-visible w-full py-2" onTouchStart={onInteractionStart} onTouchEnd={onInteractionEnd}>
+            <motion.div 
+                className="slider-track"
+                style={{ x }}
+                drag="x"
+                dragConstraints={{ left: -totalWidth * 4, right: -totalWidth * 2 }}
+                onDragStart={onInteractionStart}
+                onDragEnd={onInteractionEnd}
+            >
+                {loopedItems.map((service, index) => (
+                    <SpellCard key={`${service.title}-${index}`} {...service} />
+                ))}
+            </motion.div>
+        </div>
+    );
+};
+
 const WhatWeOffer = () => {
     const { theme } = useTheme();
     const isLight = theme === 'enchanted-scroll';
-    const [isInteracting, setIsInteracting] = useState(false);
-    const controls = useAnimation();
+    const [isHovered, setIsHovered] = useState(false);
+    const [isDragging, setIsDragging] = useState(false);
+    const isInteracting = isHovered || isDragging;
     const x = useMotionValue(0);
     const containerRef = useRef(null);
     const timerRef = useRef(null);
@@ -79,31 +121,31 @@ const WhatWeOffer = () => {
             title: 'Website Development',
             description: 'Enchanting, high-performance websites and web applications built with magical speed and precision.',
             image: 'https://picsum.photos/seed/webdev/300/200',
-            stats: { power: 'Ultra', type: 'Design', impact: '250%' }
+            stats: { power: 'Ultra'}
         },
         {
             title: 'Digital Marketing',
             description: 'Strategic spells for growth. We construct strategic campaigns that attract and convert your ideal audience.',
             image: 'https://picsum.photos/seed/marketing/300/200',
-            stats: { power: 'High', type: 'Charm', impact: '180%' }
+            stats: { power: 'High'}
         },
         {
             title: 'Ad Campaigns',
             description: 'Targeted advertisements that strike your audience with the accuracy of a master seeker.',
             image: 'https://picsum.photos/seed/ads/300/200',
-            stats: { power: 'High', type: 'Spell', impact: '320%' }
+            stats: { power: 'High' }
         },
         {
             title: 'Video Production',
             description: 'Cinematic video content tailored for social media, YouTube, and corporate storytelling.',
             image: 'https://picsum.photos/seed/video/300/200',
-            stats: { power: 'High', type: 'Vibe', impact: '210%' }
+            stats: { power: 'High' }
         },
         {
             title: 'Graphic Design',
             description: 'Breathtaking visuals. From event posters to complete brand identities and user interface design.',
             image: 'https://picsum.photos/seed/design/300/200',
-            stats: { power: 'Mega', type: 'Aura', impact: '150%' }
+            stats: { power: 'Mega' }
         }
     ], []);
 
@@ -133,56 +175,39 @@ const WhatWeOffer = () => {
         return () => unsubscribe();
     }, [totalWidth, x]);
 
-    // Auto-scroll logic
-    const startAutoScroll = useCallback(() => {
-        if (isLight) return;
-        controls.start({
-            x: x.get() - totalWidth,
-            transition: {
-                duration: 20,
-                ease: "linear",
-                repeat: Infinity,
-                from: x.get()
-            }
-        });
-    }, [controls, isLight, totalWidth, x]);
-
-    useEffect(() => {
-        if (!isInteracting && !isLight) {
-            startAutoScroll();
-        } else {
-            controls.stop();
-        }
-    }, [isInteracting, isLight, controls, startAutoScroll]);
+    // Seamless Auto-scroll using requestAnimationFrame
+    useAnimationFrame((time, delta) => {
+        if (isLight || isInteracting) return;
+        const safeDelta = Math.min(delta, 50); // Prevent large jumps after tab change
+        const moveBy = 0.05 * safeDelta; // Smooth speed
+        x.set(x.get() - moveBy);
+    });
 
     // Manual Interaction Handlers
-    const handleInteractionStart = () => {
-        setIsInteracting(true);
+    const handleDragStart = () => {
+        setIsDragging(true);
         if (timerRef.current) clearTimeout(timerRef.current);
     };
 
-    const handleInteractionEnd = () => {
+    const handleDragEnd = () => {
         timerRef.current = setTimeout(() => {
-            setIsInteracting(false);
-        }, 2000); // Resume after 2 seconds of idle
+            setIsDragging(false);
+        }, 1000); // Resume after 1 second of idle
     };
 
     const handleWheel = (e) => {
         if (isLight) return;
-        handleInteractionStart();
+        handleDragStart();
         const delta = e.deltaX || e.deltaY;
         x.set(x.get() - delta);
-        handleInteractionEnd();
+        handleDragEnd();
     };
 
     const shiftSlide = (direction) => {
-        handleInteractionStart();
+        handleDragStart();
         const newX = direction === 'next' ? x.get() - cardWidth : x.get() + cardWidth;
-        controls.start({
-            x: newX,
-            transition: { type: "spring", stiffness: 100, damping: 20 }
-        });
-        handleInteractionEnd();
+        animate(x, newX, { type: "spring", stiffness: 100, damping: 20 });
+        handleDragEnd();
     }
 
     return (
@@ -231,46 +256,66 @@ const WhatWeOffer = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="font-magical text-5xl md:text-7xl section-title mb-6"
+                        className="font-magical text-[clamp(1.75rem,8vw,3rem)] md:text-7xl leading-tight section-title mb-6"
                     >
                         {isLight ? 'What We Offer' : 'Eternal Manifestations'}
                     </motion.h2>
                 </div>
 
                 {!isLight ? (
-                    <div 
-                        className="slider-container"
-                        onWheel={handleWheel}
-                        onMouseEnter={() => setIsInteracting(true)}
-                        onMouseLeave={handleInteractionEnd}
-                    >
-                        {/* Static Navigation Buttons */}
-                        <button onClick={() => shiftSlide('prev')} className="nav-arrow left !z-50">
-                            <ChevronLeft size={30} />
-                        </button>
-                        <button onClick={() => shiftSlide('next')} className="nav-arrow right !z-50">
-                            <ChevronRight size={30} />
-                        </button>
+                    <>
+                        {/* Desktop View: Single Track */}
+                        <div 
+                            className="slider-container hidden md:block"
+                            onWheel={handleWheel}
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
+                        >
+                            {/* Static Navigation Buttons */}
+                            <button onClick={() => shiftSlide('prev')} className="nav-arrow left !z-50">
+                                <ChevronLeft size={30} />
+                            </button>
+                            <button onClick={() => shiftSlide('next')} className="nav-arrow right !z-50">
+                                <ChevronRight size={30} />
+                            </button>
 
-                        <div className="slider-viewport" ref={containerRef}>
-                            <motion.div 
-                                className="slider-track"
-                                style={{ x }}
-                                drag="x"
-                                dragConstraints={{ left: -totalWidth * 2, right: 0 }}
-                                onDragStart={handleInteractionStart}
-                                onDragEnd={handleInteractionEnd}
-                                animate={controls}
-                            >
-                                {loopedServices.map((service, index) => (
-                                    <SpellCard 
-                                        key={index} 
-                                        {...service} 
-                                    />
-                                ))}
-                            </motion.div>
+                            <div className="slider-viewport" ref={containerRef}>
+                                <motion.div 
+                                    className="slider-track"
+                                    style={{ x }}
+                                    drag="x"
+                                    dragConstraints={{ left: -totalWidth * 2, right: 0 }}
+                                    onDragStart={handleDragStart}
+                                    onDragEnd={handleDragEnd}
+                                >
+                                    {loopedServices.map((service, index) => (
+                                        <SpellCard 
+                                            key={index} 
+                                            {...service} 
+                                        />
+                                    ))}
+                                </motion.div>
+                            </div>
                         </div>
-                    </div>
+
+                        {/* Mobile View: Dual Alternating Tracks */}
+                        <div className="md:hidden flex flex-col gap-6 w-full py-8 overflow-hidden relative">
+                            <ScrollingTrack 
+                                items={baseServices.slice(0, 3)} 
+                                direction={-1} 
+                                isInteracting={isInteracting} 
+                                onInteractionStart={handleDragStart} 
+                                onInteractionEnd={handleDragEnd} 
+                            />
+                            <ScrollingTrack 
+                                items={baseServices.slice(3, 5)} 
+                                direction={1} 
+                                isInteracting={isInteracting} 
+                                onInteractionStart={handleDragStart} 
+                                onInteractionEnd={handleDragEnd} 
+                            />
+                        </div>
+                    </>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
                         {baseServices.map((service, index) => (

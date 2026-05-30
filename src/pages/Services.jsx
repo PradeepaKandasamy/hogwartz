@@ -84,12 +84,12 @@ const Services = () => {
             </Helmet>
 
             <ServicesHero isDark={isDark} content={content} />
-            <ServicesList 
+            {/* <ServicesList 
                 isDark={isDark} 
                 content={content} 
                 activeDetailed={activeDetailed} 
                 setActiveDetailed={setActiveDetailed} 
-            />
+            /> */}
             <ProcessSection isDark={isDark} content={content} />
             <ServicesCTA isDark={isDark} content={content} />
         </div>
