@@ -16,7 +16,7 @@ const ContactBanner = () => {
                     viewport={{ once: false, margin: "-50px" }}
                     transition={{ duration: 0.8 }}
                     className={`relative rounded-[3rem] overflow-hidden ${theme === 'enchanted-scroll'
-                        ? 'border border-accent/30 shadow-[0_0_50px_var(--color-accent)]'
+                        ? 'border border-accent/30 shadow-xl'
                         : 'shadow-2xl'
                         }`}
                 >

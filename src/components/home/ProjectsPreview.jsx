@@ -50,7 +50,7 @@ const ProjectCard = ({ title, category, index, isLarge, isDark }) => {
                     <div className="flex justify-between items-end gap-6">
                         <h3 className={`font-magical font-bold leading-[1.1] transition-all duration-500
                             ${isLarge ? 'text-4xl md:text-5xl lg:text-6xl tracking-tight' : 'text-2xl md:text-3xl'}
-                            ${isDark ? 'text-white group-hover:text-highlight' : 'text-text-primary'}`}>
+                            text-white group-hover:text-highlight`}>
                             {title}
                         </h3>
                         

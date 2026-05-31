@@ -150,10 +150,6 @@
     body.theme-dark-arts * {
       cursor: none !important;
     }
-    
-    body.theme-enchanted * {
-      cursor: auto !important;
-    }
   }
 
   h1,
