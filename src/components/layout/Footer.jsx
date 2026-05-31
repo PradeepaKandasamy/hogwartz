@@ -22,15 +22,15 @@ const Footer = () => {
                         We weave digital magic to bring your ideas to life. From spellbinding websites to enchanting marketing campaigns.
                     </p>
                     <div className="flex gap-4">
-                        <a href="#" className={`p-2 rounded-full transition-all duration-300
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={`p-2 rounded-full transition-all duration-300
                             ${isLight ? 'bg-footer-link/10 text-footer-link hover:bg-footer-link hover:text-dark-block' : 'bg-primary/20 hover:bg-highlight hover:text-primary text-foreground'}`}>
                             <Instagram className="w-4 h-4" />
                         </a>
-                        <a href="#" className={`p-2 rounded-full transition-all duration-300
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className={`p-2 rounded-full transition-all duration-300
                             ${isLight ? 'bg-footer-link/10 text-footer-link hover:bg-footer-link hover:text-dark-block' : 'bg-primary/20 hover:bg-highlight hover:text-primary text-foreground'}`}>
                             <Twitter className="w-4 h-4" />
                         </a>
-                        <a href="#" className={`p-2 rounded-full transition-all duration-300
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={`p-2 rounded-full transition-all duration-300
                             ${isLight ? 'bg-footer-link/10 text-footer-link hover:bg-footer-link hover:text-dark-block' : 'bg-primary/20 hover:bg-highlight hover:text-primary text-foreground'}`}>
                             <Linkedin className="w-4 h-4" />
                         </a>

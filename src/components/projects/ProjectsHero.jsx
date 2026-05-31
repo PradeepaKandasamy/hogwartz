@@ -113,10 +113,10 @@ const ProjectsHero = ({ isDark }) => {
                                     <span>View All Projects</span>
                                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </NavLink>
-                                <button className="group px-10 py-5 rounded-2xl border-2 border-primary/5 bg-white font-bold transition-all duration-300 hover:bg-slate-50 text-primary flex items-center gap-3">
+                                <NavLink to="/contact" className="group px-10 py-5 rounded-2xl border-2 border-primary/5 bg-white font-bold transition-all duration-300 hover:bg-slate-50 text-primary flex items-center gap-3">
                                     <Zap className="w-5 h-5 text-accent" />
                                     <span>Start Your Project</span>
-                                </button>
+                                </NavLink>
                             </div>
 
                             {/* Stats mini bar */}
@@ -236,9 +236,9 @@ const ProjectsHero = ({ isDark }) => {
                             </p>
                             
                             <div className="flex flex-wrap gap-6 items-center justify-center">
-                                <button className="px-8 py-4 rounded-full font-bold text-lg flex items-center gap-3 transition-all transform hover:scale-105 bg-accent text-primary shadow-[0_0_30px_rgba(201,168,76,0.4)]">
+                                <NavLink to="/contact" className="px-8 py-4 rounded-full font-bold text-lg flex items-center gap-3 transition-all transform hover:scale-105 bg-accent text-primary shadow-[0_0_30px_rgba(201,168,76,0.4)]">
                                     Craft Your Artifact <ArrowRight className="w-5 h-5" />
-                                </button>
+                                </NavLink>
                                 <div className="flex -space-x-3">
                                     {[...Array(4)].map((_, i) => (
                                         <div key={i} className="w-10 h-10 rounded-full border-2 border-background bg-accent/20 flex items-center justify-center overflow-hidden">

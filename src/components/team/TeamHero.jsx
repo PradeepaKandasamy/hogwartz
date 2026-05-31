@@ -127,11 +127,11 @@ const TeamHero = ({ isDark }) => {
                             </div>
 
                             <div className="flex flex-col sm:flex-row items-center gap-6 pt-4">
-                                <button className="group px-10 py-5 rounded-2xl bg-[#1E293B] text-white font-bold transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-3">
+                                <button onClick={() => window.scrollTo({ top: 800, behavior: 'smooth' })} className="group px-10 py-5 rounded-2xl bg-[#1E293B] text-white font-bold transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-3">
                                     <span>Meet the Team</span>
                                     <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                                 </button>
-                                <button className="group px-10 py-5 rounded-2xl border-2 border-primary/5 bg-white font-bold transition-all duration-300 hover:bg-slate-50 text-primary flex items-center gap-3 shadow-sm">
+                                <button onClick={() => window.scrollTo({ top: 1800, behavior: 'smooth' })} className="group px-10 py-5 rounded-2xl border-2 border-primary/5 bg-white font-bold transition-all duration-300 hover:bg-slate-50 text-primary flex items-center gap-3 shadow-sm">
                                     <Star className="w-5 h-5 text-accent" />
                                     <span>Our Rituals</span>
                                 </button>

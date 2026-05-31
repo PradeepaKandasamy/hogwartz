@@ -96,14 +96,14 @@ const ContactHero = ({ isDark }) => {
                             </div>
 
                             <div className="flex flex-col sm:flex-row items-center gap-5 pt-4">
-                                <button className="group px-10 py-5 rounded-2xl bg-[#1E293B] text-white font-bold transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-3">
+                                <button onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })} className="group px-10 py-5 rounded-2xl bg-[#1E293B] text-white font-bold transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-3">
                                     <span>Send a Message</span>
                                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </button>
-                                <button className="group px-10 py-5 rounded-2xl border-2 border-primary/5 bg-white font-bold transition-all duration-300 hover:bg-slate-50 text-primary flex items-center gap-3">
+                                <a href="mailto:hello@hogwartzdigital.com" className="group px-10 py-5 rounded-2xl border-2 border-primary/5 bg-white font-bold transition-all duration-300 hover:bg-slate-50 text-primary flex items-center gap-3">
                                     <Calendar className="w-5 h-5 text-accent" />
                                     <span>Schedule a Call</span>
-                                </button>
+                                </a>
                             </div>
                         </motion.div>
 
@@ -141,7 +141,7 @@ const ContactHero = ({ isDark }) => {
                                         </div>
                                     </div>
                                     
-                                    <button className="w-full h-12 bg-gradient-to-r from-accent to-highlight rounded-xl flex items-center justify-center gap-3 text-white font-bold text-sm shadow-xl shadow-accent/20">
+                                    <button onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })} className="w-full h-12 bg-gradient-to-r from-accent to-highlight rounded-xl flex items-center justify-center gap-3 text-white font-bold text-sm shadow-xl shadow-accent/20">
                                         Conjure Send <Send className="w-4 h-4" />
                                     </button>
                                 </div>
