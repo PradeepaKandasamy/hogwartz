@@ -93,17 +93,17 @@ const HeroSection = () => {
                             <motion.div variants={badgeVariants} className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-primary/10 bg-white/80 text-primary shadow-sm backdrop-blur-md mb-2">
                                 <SparklesIcon className="w-4 h-4 text-accent animate-pulse" />
                                 <span className="font-body text-xs md:text-sm font-bold tracking-widest uppercase">
-                                    Welcome to Hogwartz
+                                    WELCOME TO HOGWARTZ DIGITAL
                                 </span>
                             </motion.div>
 
                             <motion.h1 variants={headlineVariants} className="font-heading font-extrabold text-4xl md:text-5xl lg:text-7xl tracking-tight leading-[1.1] text-[#1E293B]">
-                                Where Magic <br className="hidden sm:block" />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A84C] to-highlight">Meets Marketing</span>
+                                Where Creativity <br className="hidden sm:block" />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A84C] to-highlight">Meets Growth</span>
                             </motion.h1>
 
                             <motion.p variants={subtitleVariants} className="text-lg md:text-xl max-w-2xl font-medium leading-relaxed text-text-secondary">
-                                We craft digital experiences that feel magical and deliver real results. Transform your brand's presence with our enchanted services.
+                                We help businesses grow through strategic marketing, modern technology, and creative digital experiences. From websites to branding and performance marketing, we transform ideas into measurable growth.
                             </motion.p>
 
                             <motion.div variants={buttonVariants} className="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto justify-center lg:justify-start">
@@ -133,8 +133,8 @@ const HeroSection = () => {
                                     ))}
                                 </div>
                                 <div className="text-left">
-                                    <p className="text-sm font-bold text-primary">50K+ Happy Clients</p>
-                                    <div className="flex gap-1">
+                                    <p className="text-sm font-bold text-primary max-w-[200px] leading-tight">Helping local businesses build a stronger digital future since 2025.</p>
+                                    <div className="flex gap-1 mt-1">
                                         {[...Array(5)].map((_, i) => <SparklesIcon key={i} className="w-3 h-3 text-accent fill-accent" />)}
                                     </div>
                                 </div>
@@ -167,8 +167,8 @@ const HeroSection = () => {
                                             <SparklesIcon className="w-4 h-4 sm:w-5 sm:h-5" />
                                         </div>
                                         <div>
-                                            <p className="text-[8px] sm:text-[10px] uppercase font-bold text-text-muted tracking-wider">Growth</p>
-                                            <p className="text-sm sm:text-lg font-bold text-primary">+124%</p>
+                                            <p className="text-[8px] sm:text-[10px] uppercase font-bold text-text-muted tracking-wider">Clients Served</p>
+                                            <p className="text-sm sm:text-lg font-bold text-primary">4+</p>
                                         </div>
                                     </div>
                                     <div className="h-1 sm:h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
@@ -195,8 +195,8 @@ const HeroSection = () => {
                                             <SparklesIcon className="w-4 h-4 sm:w-5 sm:h-5" />
                                         </div>
                                     </div>
-                                    <div className="text-lg sm:text-2xl font-bold text-primary">$42,900</div>
-                                    <p className="text-[8px] sm:text-[10px] font-bold text-text-muted mt-1 uppercase tracking-widest">Digital Revenue</p>
+                                    <div className="text-lg sm:text-2xl font-bold text-primary">2+</div>
+                                    <p className="text-[8px] sm:text-[10px] font-bold text-text-muted mt-1 uppercase tracking-widest">Projects Delivered</p>
                                 </motion.div>
 
                                 <motion.div

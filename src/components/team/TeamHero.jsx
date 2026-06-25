@@ -82,14 +82,14 @@ const TeamHero = ({ isDark }) => {
                         >
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/10 bg-white shadow-lg shadow-primary/5">
                                 <Users className="w-4 h-4 text-accent" />
-                                <span className="font-heading text-xs font-bold tracking-widest uppercase text-primary">Humans of Hogwartz</span>
+                                <span className="font-heading text-xs font-bold tracking-widest uppercase text-primary">THE PEOPLE BEHIND THE MAGIC</span>
                             </div>
 
                             <h1 className="font-heading font-extrabold text-4xl md:text-5xl lg:text-7xl text-[#1E293B] leading-[1.1] tracking-tight">
-                                The Minds <br />
-                                Behind the <br />
+                                Meet the Minds <br />
+                                Behind <br />
                                 <span className="relative inline-block">
-                                    <span className="text-accent italic">Magic</span>
+                                    <span className="text-accent italic">Growth</span>
                                     <motion.div 
                                         animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
                                         transition={{ duration: 3, repeat: Infinity }}
@@ -102,7 +102,7 @@ const TeamHero = ({ isDark }) => {
 
                             <div className="space-y-4">
                                 <p className="font-body text-lg md:text-xl text-text-muted leading-relaxed max-w-xl font-medium">
-                                    A team of creators, strategists, and innovators crafting digital experiences that leave lasting impressions. 
+                                    A team of creators, strategists, developers, and designers working together to build meaningful digital experiences for modern businesses.
                                 </p>
                                 
                                 {/* Dynamic Expertise Highlight */}
@@ -144,7 +144,7 @@ const TeamHero = ({ isDark }) => {
                                         <Users className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <p className="text-xl font-bold text-primary leading-tight">10+</p>
+                                        <p className="text-xl font-bold text-primary leading-tight">4</p>
                                         <p className="text-[10px] text-text-muted font-bold uppercase tracking-widest">Team Members</p>
                                     </div>
                                 </div>
@@ -153,8 +153,8 @@ const TeamHero = ({ isDark }) => {
                                         <Briefcase className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <p className="text-xl font-bold text-primary leading-tight">5+</p>
-                                        <p className="text-[10px] text-text-muted font-bold uppercase tracking-widest">Global Offices</p>
+                                        <p className="text-xl font-bold text-primary leading-tight">4+</p>
+                                        <p className="text-[10px] text-text-muted font-bold uppercase tracking-widest">Clients Served</p>
                                     </div>
                                 </div>
                             </div>
@@ -184,7 +184,7 @@ const TeamHero = ({ isDark }) => {
                                         </div>
                                         <span className="text-[10px] font-bold tracking-[0.2em] uppercase">Creative Team</span>
                                     </div>
-                                    <span className="text-xs font-black text-white">Est. 2024</span>
+                                    <span className="text-xs font-black text-white">Est. 2025</span>
                                 </div>
                             </motion.div>
 
@@ -231,16 +231,16 @@ const TeamHero = ({ isDark }) => {
                             >
                                  <Sparkles className={`w-4 h-4 animate-pulse`} /> 
                                  <span className="font-body font-bold text-xs md:text-sm tracking-widest uppercase">
-                                     The High Council
+                                     THE PEOPLE BEHIND THE MAGIC
                                  </span>
                              </motion.div>
                             
                             <h1 className="text-4xl md:text-6xl lg:text-7xl font-magical font-bold leading-[1.2] mb-8 tracking-tight text-white">
-                                The Minds Behind <br /><span className="text-accent underline decoration-accent/20 underline-offset-[12px]">The Magic</span>
+                                Meet the Minds Behind <br /><span className="text-accent underline decoration-accent/20 underline-offset-[12px]">Growth</span>
                             </h1>
                             
                             <p className="text-lg md:text-xl font-body max-w-2xl leading-relaxed mb-10 text-text-secondary">
-                                Behind every digital manifestation is a collective of focused minds. We combine the precision of engineering with the spirit of pure creativity to craft your success.
+                                A team of creators, strategists, developers, and designers working together to build meaningful digital experiences for modern businesses.
                             </p>
                             
                             <div className="w-px h-24 bg-gradient-to-b from-accent to-transparent opacity-40" />

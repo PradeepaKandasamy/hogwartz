@@ -341,26 +341,25 @@ const DarkArtsHero = () => {
       <div className="hero-content" ref={contentRef}>
         <p className="hero-eyebrow">
           <span className="eyebrow-line" />
-          WELCOME TO
+          WELCOME TO HOGWARTZ DIGITAL
           <span className="eyebrow-line" />
         </p>
 
         <div className="heading-wrapper">
           <h1 className="hero-heading">
-            THE <span className="gradient-text">WIZARD WORLD</span>
+            Where Creativity <br /><span className="gradient-text">Meets Growth</span>
           </h1>
           <div className="heading-glow-halo" />
         </div>
 
         <p className="hero-subheading">
-          Crafting digital enchantments that bridge the gap between imagination
-          and modern reality — a cinematic world of mysterious, premium experiences.
+          We help businesses grow through strategic marketing, modern technology, and creative digital experiences. From websites to branding and performance marketing, we transform ideas into measurable growth.
         </p>
 
         <div className="hero-cta-wrapper">
           <NavLink to="/contact" className="hero-cta-btn group">
             <span className="btn-shimmer" />
-            <span className="btn-label">Begin Your Quest</span>
+            <span className="btn-label">Start Your Journey</span>
             <ArrowRight className="btn-icon group-hover:translate-x-1 transition-transform" />
           </NavLink>
 
@@ -372,9 +371,9 @@ const DarkArtsHero = () => {
         {/* Decorative stats band */}
         <div className="hero-stats">
           {[
-            { value: '200+', label: 'Spells Cast' },
-            { value: '50K+', label: 'Happy Witches' },
-            { value: '99%', label: 'Magic Success' },
+            { value: '2025', label: 'Founded In' },
+            { value: '4+', label: 'Clients Served' },
+            { value: '4', label: 'Industries Served' },
           ].map(s => (
             <div key={s.label} className="stat-item">
               <span className="stat-value">{s.value}</span>

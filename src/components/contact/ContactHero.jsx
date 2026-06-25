@@ -61,11 +61,11 @@ const ContactHero = ({ isDark }) => {
                         >
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/10 bg-white shadow-sm">
                                 <MessageCircle className="w-4 h-4 text-accent" />
-                                <span className="font-heading text-xs font-bold tracking-widest uppercase text-primary">Direct Gateway</span>
+                                <span className="font-heading text-xs font-bold tracking-widest uppercase text-primary">START A PROJECT</span>
                             </div>
 
                             <h1 className="font-heading font-extrabold text-4xl md:text-5xl lg:text-7xl text-[#1E293B] leading-[1.1]">
-                                Let’s Build <br />
+                                Let's Build <br />
                                 Something Incredible <br />
                                 <span className="text-accent italic relative">
                                     Together
@@ -75,7 +75,7 @@ const ContactHero = ({ isDark }) => {
 
                             <div className="space-y-4">
                                 <p className="font-body text-lg md:text-xl text-text-muted leading-relaxed max-w-xl font-medium">
-                                    Have an idea, project, or question? We’re just one message away from turning it into reality.
+                                    Whether you're launching a new brand, growing your online presence, or building your next website, we're here to help turn your vision into reality.
                                 </p>
                                 
                                 {/* Auto-Typing Feature */}
@@ -186,17 +186,17 @@ const ContactHero = ({ isDark }) => {
                                 transition={{ duration: 1, delay: 0.2 }}
                                 className="inline-block mb-6 text-xs md:text-sm font-bold uppercase tracking-[0.4em] text-accent"
                             >
-                                The Owl Post
+                                 START A PROJECT
                             </motion.span>
                             
                             <h1 className="hero-title font-bold mb-8 text-white">
                                 <span className="block">
-                                    Summon Our <span className="text-accent italic">Digital Warlocks</span>
+                                    Let's Build Something <br /><span className="text-accent italic">Incredible Together</span>
                                 </span>
                             </h1>
 
                             <p className="text-intro max-w-2xl mx-auto mb-10 text-text-secondary/80">
-                                Have a grand vision that needs the touch of the arcane? Send us an owl and watch the magic unfold.
+                                Whether you're launching a new brand, growing your online presence, or building your next website, we're here to help turn your vision into reality.
                             </p>
                             
                             <div className="w-px h-24 bg-gradient-to-b from-accent to-transparent opacity-40 mx-auto" />

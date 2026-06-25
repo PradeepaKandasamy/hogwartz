@@ -39,23 +39,23 @@ const Testimonials = ({ isDark }) => {
                                 {[...Array(5)].map((_, i) => <Star key={i} className="w-8 h-8 text-accent fill-accent" />)}
                             </motion.div>
                              <motion.h2 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="text-3xl md:text-4xl lg:text-5xl font-magical font-bold leading-[1.4] italic">
-                                "Hogwartz turned our fragmented vision into a digital legacy. The conversion rate jumped by 300%, and the brand now feels truly legendary."
+                                "Hogwartz Digital transformed our online presence. Their strategic marketing and beautiful designs helped us connect with our customers effectively."
                             </motion.h2>
                             
                             <motion.div variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }} className="flex items-center gap-6">
-                                 <div className="w-16 h-16 rounded-full bg-accent text-primary flex items-center justify-center font-bold text-2xl shadow-[0_0_20px_rgba(201,168,76,0.5)]">L</div>
+                                 <div className="w-16 h-16 rounded-full bg-accent text-primary flex items-center justify-center font-bold text-2xl shadow-[0_0_20px_rgba(201,168,76,0.5)]">V</div>
                                 <div>
-                                    <p className="text-xl font-bold text-text-primary">Luna Scamander</p>
-                                    <p className="text-base text-text-muted font-body">Editor-in-Chief, The Quibbler</p>
+                                    <p className="text-xl font-bold text-text-primary">Vangalamman Decors</p>
+                                    <p className="text-base text-text-muted font-body">Featured Client</p>
                                 </div>
                             </motion.div>
                         </div>
                         
                         <div className="lg:col-span-4 flex lg:flex-col flex-row flex-wrap gap-10">
                             {[
-                                { val: '98%', label: 'Retention Rate' },
-                                { val: '15x', label: 'Average ROI' },
-                                { val: '5.0', label: 'Trust Index' }
+                                { val: '4+', label: 'Clients Served' },
+                                { val: '2+', label: 'Projects Delivered' },
+                                { val: '4', label: 'Industries Served' }
                             ].map((stat, i) => (
                                 <motion.div key={i} variants={{ hidden: { opacity: 0, x: 20 }, visible: { opacity: 1, x: 0 } }} className="space-y-1">
                                     <p className="text-5xl md:text-7xl font-heading font-bold text-accent">{stat.val}</p>

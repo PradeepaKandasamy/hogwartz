@@ -8,7 +8,7 @@ const TeamCard = ({ member, index, isDark }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-50px" }}
             transition={{ duration: 0.6, delay: index * 0.15 }}
-            className={`group flex flex-col p-6 rounded-[2.5rem] border transition-all duration-500 relative
+            className={`group flex flex-col p-6 lg:p-5 xl:p-6 rounded-[2.5rem] border transition-all duration-500 relative
         ${isDark
                     ? 'bg-secondary/10 border-accent/10 hover:border-accent hover:shadow-[0_0_40px_rgba(201,168,76,0.15)] shadow-2xl'
                     : 'bg-white shadow-xl border-primary/5 hover:shadow-2xl'
@@ -38,7 +38,7 @@ const TeamCard = ({ member, index, isDark }) => {
                 )}
             </div>
 
-            <div className="flex-1 px-2">
+            <div className="flex-1 flex flex-col">
                 <div className="flex items-center gap-3 mb-2">
                     <span className="w-8 h-px bg-accent/40" />
                     <p className={`font-body text-xs md:text-sm font-bold tracking-widest uppercase italic 
@@ -48,20 +48,20 @@ const TeamCard = ({ member, index, isDark }) => {
                     </p>
                 </div>
                 
-                <h3 className={`font-heading text-2xl md:text-3xl font-bold leading-tight mb-4
+                <h3 className={`font-heading text-2xl md:text-3xl lg:text-2xl xl:text-3xl font-bold leading-tight mb-4 tracking-tight
                     ${isDark ? 'text-white' : 'text-primary'}
                 `}>
                     {member.name}
                 </h3>
                 
-                <p className={`font-body text-sm md:text-base leading-relaxed mb-8 
+                <p className={`font-body text-sm md:text-base leading-relaxed mb-6 
                     ${isDark ? 'text-text-secondary' : 'text-text-secondary font-medium'}
                 `}>
                     {member.bio}
                 </p>
             </div>
 
-            <div className={`flex gap-4 pt-6 border-t ${isDark ? 'border-accent/10' : 'border-primary/5'}`}>
+            <div className={`flex gap-4 pt-6 border-t mt-auto ${isDark ? 'border-accent/10' : 'border-primary/5'}`}>
                 {[
                     { icon: <Linkedin className="w-4 h-4" />, link: "#" },
                     { icon: <Twitter className="w-4 h-4" />, link: "#" },
@@ -88,35 +88,35 @@ const TeamCard = ({ member, index, isDark }) => {
 const MembersGrid = ({ isDark }) => {
     const teamMembers = [
         {
-            name: "Alaric Vanguard",
-            role: isDark ? "High Alchemist & Master of Vision" : "Founder & Strategic Director",
+            name: "Ramasubramaniyan",
+            role: "Founder & CEO",
             image: "https://picsum.photos/seed/member1/300/400",
-            bio: "With over 10 cycles of digital mastery, Alaric orchestrates the primordial energies of Hogwartz Digital into market-defining artifacts."
+            bio: "Visionary entrepreneur leading Hogwartz Digital with a passion for technology, creativity, and business growth."
         },
         {
-            name: "Elara Codecraft",
-            role: isDark ? "Warden of the Digital Lattice" : "Lead Web Engineer",
+            name: "Vidarshna",
+            role: "Video Editor & Designer",
             image: "https://picsum.photos/seed/member2/300/400",
-            bio: "Architecting indestructible React sanctuaries. Elara blends complex logic with elegant design to manifest premium user experiences."
+            bio: "Crafting compelling visuals and videos that capture attention and tell powerful brand stories."
         },
         {
-            name: "Silas Frame",
-            role: isDark ? "Master of Visual Enchantments" : "Creative Lead & Designer",
+            name: "Thayumanavar Naveen Kumar",
+            role: "Graphic Designer & Content Creator",
             image: "https://picsum.photos/seed/member3/300/400",
-            bio: "Transforming empty void into visual truth. Silas turns raw concepts and brand legacy into mesmerizing digital artifacts that command respect."
+            bio: "Transforming ideas into engaging visuals and content that resonate with audiences."
         },
         {
-            name: "Lyra Scroll",
-            role: isDark ? "Oracle of Market Resonance" : "Head of Growth & Strategy",
+            name: "Pradeepa",
+            role: "Developer & Editor",
             image: "https://picsum.photos/seed/member4/300/400",
-            bio: "Developing viral incantations that echo through the digital realm. Lyra specialized in full-funnel dominance and precise audience intent."
+            bio: "Building seamless digital experiences while ensuring every detail meets creative excellence."
         }
     ];
 
     return (
         <section className="py-24 px-6 md:pb-40">
             <div className="container mx-auto max-w-7xl">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 xl:gap-10">
                     {teamMembers.map((member, index) => (
                         <TeamCard key={index} member={member} index={index} isDark={isDark} />
                     ))}

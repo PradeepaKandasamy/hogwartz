@@ -177,18 +177,20 @@ const CaseStudy = ({ project, isOpen, onClose }) => {
                                             </div>
                                         </div>
 
-                                        <div className="bg-primary/5 border border-primary/10 rounded-[2rem] p-8 group">
-                                            <h4 className="text-[10px] md:text-xs font-body font-bold uppercase tracking-widest text-text-muted mb-6">Client Artifact</h4>
-                                            <div className="flex items-center gap-4">
-                                                <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-xl border border-accent/20 group-hover:bg-accent group-hover:text-primary transition-all">
-                                                    {project.testimonial.author[0]}
-                                                </div>
-                                                <div>
-                                                    <p className="font-heading font-bold text-text-primary text-xl">{project.testimonial.author}</p>
-                                                    <p className="text-sm font-body text-text-muted">{project.testimonial.role}</p>
+                                        {project.testimonial && (
+                                            <div className="bg-primary/5 border border-primary/10 rounded-[2rem] p-8 group">
+                                                <h4 className="text-[10px] md:text-xs font-body font-bold uppercase tracking-widest text-text-muted mb-6">Client Artifact</h4>
+                                                <div className="flex items-center gap-4">
+                                                    <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-xl border border-accent/20 group-hover:bg-accent group-hover:text-primary transition-all">
+                                                        {project.testimonial.author[0]}
+                                                    </div>
+                                                    <div>
+                                                        <p className="font-heading font-bold text-text-primary text-xl">{project.testimonial.author}</p>
+                                                        <p className="text-sm font-body text-text-muted">{project.testimonial.role}</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        )}
                                     </div>
                                     
                                     <button className="w-full py-5 rounded-[2rem] bg-accent text-primary font-bold flex items-center justify-center gap-3 hover:shadow-[0_0_30px_rgba(201,168,76,0.3)] transition-all group">
@@ -199,14 +201,16 @@ const CaseStudy = ({ project, isOpen, onClose }) => {
                             </div>
 
                             {/* Full Testimonial Quote */}
-                            <div className="mt-24 text-center max-w-4xl mx-auto px-6">
-                                <div className="w-px h-24 bg-gradient-to-b from-transparent via-accent to-transparent mx-auto mb-10" />
-                                <Star className="w-8 h-8 text-accent fill-accent mx-auto mb-8 animate-pulse" />
-                                <blockquote className="text-2xl md:text-3xl italic font-heading text-text-primary leading-[1.6] mb-8">
-                                    "{project.testimonial.text}"
-                                </blockquote>
-                                <div className="h-1 w-20 bg-accent mx-auto" />
-                            </div>
+                            {project.testimonial && (
+                                <div className="mt-24 text-center max-w-4xl mx-auto px-6">
+                                    <div className="w-px h-24 bg-gradient-to-b from-transparent via-accent to-transparent mx-auto mb-10" />
+                                    <Star className="w-8 h-8 text-accent fill-accent mx-auto mb-8 animate-pulse" />
+                                    <blockquote className="text-2xl md:text-3xl italic font-heading text-text-primary leading-[1.6] mb-8">
+                                        "{project.testimonial.text}"
+                                    </blockquote>
+                                    <div className="h-1 w-20 bg-accent mx-auto" />
+                                </div>
+                            )}
                         </div>
                     </motion.div>
                 </div>

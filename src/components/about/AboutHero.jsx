@@ -141,7 +141,7 @@ const AboutHero = ({ isDark, content }) => {
                                     <div className="w-10 h-10 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-4">
                                         <Zap className="w-6 h-6" />
                                     </div>
-                                    <p className="text-3xl font-bold text-primary">100+</p>
+                                    <p className="text-3xl font-bold text-primary">2+</p>
                                     <p className="text-[10px] uppercase font-bold text-text-muted tracking-widest mt-1">Projects Crafted</p>
                                 </motion.div>
 

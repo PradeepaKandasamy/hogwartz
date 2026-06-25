@@ -8,6 +8,7 @@ import { useTheme } from '../context/ThemeContext';
 import ServicesHero from '../components/services/ServicesHero';
 import ServicesList from '../components/services/ServicesList';
 import ProcessSection from '../components/services/ProcessSection';
+import PricingSection from '../components/pricing/PricingSection';
 import ServicesCTA from '../components/services/ServicesCTA';
 
 const Services = () => {
@@ -17,16 +18,24 @@ const Services = () => {
 
     const content = {
         hero: {
-            title: isDark ? "The Grimoire of Digital Sovereignty" : "Strategic Excellence & Digital Mastery",
-            subtitle: isDark 
-                ? "Unleash the primordial power of code and creative sorcery. We don't just provide services; we manifest your digital destiny."
-                : "High-performance solutions for brands that demand category leadership. We deliver technical precision and market-leading design.",
+            title: "Crafting Digital Experiences That Drive Results",
+            subtitle: "From strategy and design to development and marketing, we create digital solutions that help businesses establish their presence, attract customers, and accelerate growth.",
         },
         servicesGrid: [
-            { icon: <Globe className="w-8 h-8" />, name: isDark ? "Web Citadels" : "Corporate Platforms", tag: "Dev" },
-            { icon: <Target className="w-8 h-8" />, name: isDark ? "Strategic Spells" : "Growth Marketing", tag: "Ads" },
-            { icon: <Palette className="w-8 h-8" />, name: isDark ? "Brand Alchemy" : "Visual Identity", tag: "Design" },
-            { icon: <Video className="w-8 h-8" />, name: isDark ? "Motion Mastery" : "Video Production", tag: "Media" },
+            { icon: <Globe className="w-8 h-8" />, name: "Website Development", description: "Custom websites designed for performance, speed, and conversion.", tag: "Dev" },
+            { icon: <Target className="w-8 h-8" />, name: "Social Media Management", description: "Consistent content strategies that build engagement and brand visibility.", tag: "Social" },
+            { icon: <Megaphone className="w-8 h-8" />, name: "Digital Marketing", description: "Data-driven campaigns that help businesses reach the right audience.", tag: "Ads" },
+            { icon: <Palette className="w-8 h-8" />, name: "Branding & Logo Design", description: "Creating memorable brand identities that leave lasting impressions.", tag: "Design" },
+            { icon: <Palette className="w-8 h-8" />, name: "Poster Design", description: "Professional designs that communicate your message effectively.", tag: "Design" },
+            { icon: <Video className="w-8 h-8" />, name: "Reels & Video Editing", description: "High-quality visual storytelling optimized for modern audiences.", tag: "Video" },
+            { icon: <Video className="w-8 h-8" />, name: "AI Video Creation", description: "Modern content powered by creativity and artificial intelligence.", tag: "Video" },
+            { icon: <Search className="w-8 h-8" />, name: "SEO Services", description: "Improve visibility and rank higher where customers search.", tag: "SEO" },
+            { icon: <Target className="w-8 h-8" />, name: "Meta Ads", description: "Reach targeted audiences with performance-focused campaigns.", tag: "Ads" },
+            { icon: <Globe className="w-8 h-8" />, name: "Google Business Profile", description: "Enhance local visibility and customer trust online.", tag: "SEO" },
+            { icon: <Code className="w-8 h-8" />, name: "Content Creation", description: "Engaging content designed to educate, inspire, and convert.", tag: "Content" },
+            { icon: <Zap className="w-8 h-8" />, name: "Email Marketing", description: "Build relationships and nurture customers through email campaigns.", tag: "Marketing" },
+            { icon: <Target className="w-8 h-8" />, name: "Influencer Marketing", description: "Collaborate with creators to amplify brand reach.", tag: "Marketing" },
+            { icon: <Layout className="w-8 h-8" />, name: "UI/UX Design", description: "Crafting intuitive digital experiences that users love.", tag: "Design" },
         ],
         detailed: [
             {
@@ -64,10 +73,12 @@ const Services = () => {
             }
         ],
         steps: [
-            { number: "01", title: isDark ? "The Divination" : "Discovery & Strategy", icon: <Search className="ml-8 w-8 h-8"/>, desc: isDark ? "We look into the crystal ball of your market, identifying hidden opportunities and competitors' weaknesses." : "In-depth market research and stakeholder alignment to define clear KPIs and a roadmap for success." },
-            { number: "02", title: isDark ? "The Incantation" : "Design & Prototyping", icon: <Layout className="ml-8 w-8 h-8"/>, desc: isDark ? "Turning visions into tangible forms. We weave the first layers of visual magic through high-fidelity design." : "Creating user-centric journeys and wireframes that prioritize conversion and brand consistency." },
-            { number: "03", title: isDark ? "The Forging" : "Development & Execution", icon: <FlaskConical className="ml-8 w-8 h-8"/>, desc: isDark ? "Our artisans hammer out the code, ensuring every line is strong, every pixel is aligned, and the foundation is iron-clad." : "Agile development using modern tech stacks for reliability, speed, and cross-platform compatibility." },
-            { number: "04", title: isDark ? "The Manifestation" : "Launch & Scale", icon: <Rocket className="ml-8 w-8 h-8"/>, desc: isDark ? "Your project is released into the digital realm with the force of a supernova, monitored and scaled for maximum impact." : "Production deployment, performance monitoring, and strategic scaling to meet growing business demands." },
+            { number: "01", title: "Discovery", icon: <Search className="ml-8 w-8 h-8"/>, desc: "Understanding your business, audience, and goals." },
+            { number: "02", title: "Strategy", icon: <Target className="ml-8 w-8 h-8"/>, desc: "Building a customized roadmap for digital success." },
+            { number: "03", title: "Design", icon: <Palette className="ml-8 w-8 h-8"/>, desc: "Crafting visually engaging and user-friendly experiences." },
+            { number: "04", title: "Development", icon: <Code className="ml-8 w-8 h-8"/>, desc: "Transforming ideas into scalable digital solutions." },
+            { number: "05", title: "Launch", icon: <Rocket className="ml-8 w-8 h-8"/>, desc: "Deploying with precision and performance." },
+            { number: "06", title: "Growth", icon: <Zap className="ml-8 w-8 h-8"/>, desc: "Optimizing continuously for long-term success." },
         ],
         pricing: [
             { name: isDark ? "Apprentice" : "Essential", price: "$999", period: "/project", description: "Essential digital presence for emerging brands.", features: ["Single Page Citadel", "Custom Brand Soul", "Mobile Enchantment", "3 Months Support"], popular: false },
@@ -84,13 +95,12 @@ const Services = () => {
             </Helmet>
 
             <ServicesHero isDark={isDark} content={content} />
-            {/* <ServicesList 
+            <ServicesList 
                 isDark={isDark} 
                 content={content} 
-                activeDetailed={activeDetailed} 
-                setActiveDetailed={setActiveDetailed} 
-            /> */}
+            />
             <ProcessSection isDark={isDark} content={content} />
+            <PricingSection isDark={isDark} />
             <ServicesCTA isDark={isDark} content={content} />
         </div>
     );

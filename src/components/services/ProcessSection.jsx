@@ -29,8 +29,8 @@ const ProcessSection = ({ isDark, content }) => {
         <>
             <section className={`py-32 px-6 ${isDark ? 'bg-primary/5' : 'bg-secondary/5'}`}>
                 <div className="container mx-auto max-w-4xl text-center mb-24">
-                     <h2 className="font-magical text-4xl md:text-5xl lg:text-6xl mb-6 text-text-primary leading-tight text-center">Our Secret Formula</h2>
-                    <p className="font-body text-lg md:text-xl text-text-secondary text-center">Through discipline and ancient digital ritual, we turn visions into reality.</p>
+                     <span className="text-sm md:text-base font-bold tracking-widest uppercase text-accent mb-4 block">HOW WE WORK</span>
+                     <h2 className="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl mb-6 text-text-primary leading-tight text-center">From Idea to Impact</h2>
                 </div>
                 <div className="container mx-auto max-w-5xl space-y-32">
                     {content.steps.map((step, i) => (

@@ -52,36 +52,50 @@ const ContactCTA = ({ isDark }) => {
                     
                     <h2 className="section-h2 mb-8 leading-tight">
                         {isDark ? (
-                            <>Enough <span className="text-accent">Pondering</span>,<br />Let's Cast the First Spell.</>
+                            <>Ready to <span className="text-accent">Grow</span> Your<br />Business Digitally?</>
                         ) : (
-                            <>Ready to start your digital transformation?<br />We're just one click away.</>
+                            <>Ready to Grow Your<br />Business Digitally?</>
                         )}
                     </h2>
                     
                     <p className={`text-intro max-w-2xl mx-auto mb-12 ${isDark ? 'text-text-secondary' : 'text-text-secondary'}`}>
-                        {isDark 
-                            ? "Every grand empire starts with a single vision. Let our warlocks help you build yours from the ground up."
-                            : "Join a community of successful brands that have scaled with our expert digital agency services."
-                        }
+                        Partner with Hogwartz Digital and transform your ideas into impactful digital experiences.
                     </p>
 
-                    <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="inline-block"
-                    >
-                        <Link
-                            to="/services"
-                            className={`btn-text px-10 py-5 rounded-full transition-all flex items-center gap-3 group ${
-                                isDark 
-                                    ? 'bg-accent text-primary hover:shadow-[0_0_30px_rgba(201,168,76,0.4)]' 
-                                    : 'bg-primary text-white hover:bg-secondary'
-                            }`}
+                    <div className="flex flex-col sm:flex-row items-center gap-5 justify-center">
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
                         >
-                            <span>Explore Our Spells</span>
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                    </motion.div>
+                            <Link
+                                to="/contact"
+                                className={`btn-text px-10 py-5 rounded-full transition-all flex items-center gap-3 group ${
+                                    isDark 
+                                        ? 'bg-accent text-primary hover:shadow-[0_0_30px_rgba(201,168,76,0.4)]' 
+                                        : 'bg-primary text-white hover:bg-secondary'
+                                }`}
+                            >
+                                <span>Start Your Project</span>
+                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                        </motion.div>
+
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            <Link
+                                to="/contact"
+                                className={`btn-text px-10 py-5 rounded-full transition-all flex items-center gap-3 group border-2 ${
+                                    isDark 
+                                        ? 'border-accent/50 text-accent hover:bg-accent/10' 
+                                        : 'border-primary/20 text-primary hover:bg-primary/5'
+                                }`}
+                            >
+                                <span>Book a Free Consultation</span>
+                            </Link>
+                        </motion.div>
+                    </div>
                 </motion.div>
             </div>
         </section>

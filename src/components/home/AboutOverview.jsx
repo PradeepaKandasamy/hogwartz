@@ -172,11 +172,11 @@ const AboutOverview = () => {
 
                         <div className={`grid grid-cols-2 gap-8 mb-12 ${isLight ? 'block' : 'hidden'}`}>
                             <div className="p-6 bg-white rounded-2xl border border-primary/5 shadow-sm">
-                                <h4 className="text-3xl font-bold text-primary mb-1">100%</h4>
-                                <p className="text-sm font-bold text-text-muted uppercase tracking-widest">Client Satisfaction</p>
+                                <h4 className="text-3xl font-bold text-primary mb-1">4+</h4>
+                                <p className="text-sm font-bold text-text-muted uppercase tracking-widest">Clients Served</p>
                             </div>
                             <div className="p-6 bg-white rounded-2xl border border-primary/5 shadow-sm">
-                                <h4 className="text-3xl font-bold text-primary mb-1">500+</h4>
+                                <h4 className="text-3xl font-bold text-primary mb-1">2+</h4>
                                 <p className="text-sm font-bold text-text-muted uppercase tracking-widest">Projects Launched</p>
                             </div>
                         </div>

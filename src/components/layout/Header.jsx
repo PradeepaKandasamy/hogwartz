@@ -80,7 +80,7 @@ const Header = () => {
                                     relative py-2 text-sm font-heading font-heavy tracking-widest uppercase transition-all duration-300
                                     ${isActive 
                                         ? (isDark ? 'text-accent' : 'text-primary') 
-                                        : (isDark ? 'text-text-secondary hover:text-white' : 'text-text-muted hover:text-primary')
+                                        : (isDark ? 'text-text-secondary hover:text-white' : 'text-primary/80 hover:text-primary')
                                     }
                                     group
                                 `}
@@ -188,7 +188,7 @@ const Header = () => {
                                         onClick={() => setIsOpen(false)}
                                         className={({ isActive }) => `
                                             text-3xl font-heading font-heavy tracking-wider uppercase flex items-center justify-between
-                                            ${isActive ? 'text-accent' : (isDark ? 'text-white/40' : 'text-primary/40')}
+                                            ${isActive ? 'text-accent' : (isDark ? 'text-white/40' : 'text-primary/70')}
                                         `}
                                     >
                                         {link.title}

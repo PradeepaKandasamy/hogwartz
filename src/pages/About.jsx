@@ -47,31 +47,29 @@ const About = () => {
     const content = {
 // ... existing content ... (lines 25-63 skipped for brevity but preserved)
         hero: {
-            title: isDark ? "Magic In Every Pixel" : "Crafting Digital Excellence",
-            subtitle: isDark ? "Architects of the Arcane Web" : "Your Vision, Our Passion",
-            statement: isDark 
-                ? "We don't just build websites; we conjure high-performance digital artifacts designed to enchant your users and dominate your market."
-                : "Hogwartz Digital is a premium agency dedicated to transforming brands through stunning design, robust development, and strategic marketing."
+            title: "We Didn't Just Build a Brand...",
+            subtitle: "We Built a Digital Growth Partner",
+            statement: "Founded on 20 October 2025, Hogwartz Digital began with a simple vision: helping local businesses thrive in the digital world."
         },
         story: {
-            title: "The Chronicles of Our Coven",
-            p1: "Our journey began over a decade ago when a small group of digital warlocks decided that 'good enough' was no longer acceptable. We saw a world of flat, uninspired web spaces and knew we could bring the spark of life back into the machine.",
-            p2: "Today, we've transformed from a hidden collective into a global force of creativity. We specialize in taking the complex, the mundane, and the difficult and turning them into seamless, magical experiences that drive real growth.",
+            title: "THE HOGWARTZ STORY",
+            p1: "What started as an ambitious idea has grown into a creative agency delivering websites, marketing strategies, branding solutions, and digital experiences that create real impact.",
+            p2: "We believe every business—big or small—deserves access to modern digital solutions that drive growth, build trust, and create lasting customer relationships. By combining human creativity with technology and modern marketing enhanced by artificial intelligence, we craft digital experiences that help businesses stand out.",
             highlights: [
-                { icon: <Clock className="w-8 h-8" />, label: "Decade of Spells", description: "10+ years of pushing technology to its absolute limits." },
-                { icon: <Globe className="w-8 h-8" />, label: "Global Reach", description: "Serving ambitious clients from Diagon Alley to Silicon Valley." },
-                { icon: <ShieldCheck className="w-8 h-8" />, label: "Battle Hardened", description: "Bulletproof security and reliability in every single artifact." }
+                { icon: <Clock className="w-8 h-8" />, label: "Founded in 2025", description: "Established on 20 October 2025 to help local businesses." },
+                { icon: <Globe className="w-8 h-8" />, label: "Creative Team", description: "Team of 4 creative professionals delivering excellence." },
+                { icon: <ShieldCheck className="w-8 h-8" />, label: "Industries", description: "Serving 4 distinct industries with specialized solutions." }
             ]
         },
         mission: {
             icon: <Zap className="w-8 h-8" />,
             title: "The Mission",
-            p: "To empower visionary brands by providing them with the highest-grade digital tools and strategies, ensuring their influence spreads across the modern digital landscape like a perfectly cast spell."
+            p: "To empower businesses with creative technology, strategic marketing, and digital experiences that drive measurable growth."
         },
         vision: {
             icon: <Sparkles className="w-8 h-8" />,
             title: "The Vision",
-            p: "To be the premier architect of the enchanted web, where every digital touchpoint is an opportunity for awe, discovery, and unparalleled performance for every user who enters our domain."
+            p: "To become the most trusted digital growth partner for local businesses."
         },
         special: {
             title: isDark ? "The Arcane Specializations" : "Our Core Specializations",
@@ -88,10 +86,10 @@ const About = () => {
     };
 
     const statsData = [
-        { icon: <Zap className="w-10 h-10" />, value: "500+", label: "Artifacts Launched" },
-        { icon: <Sparkles className="w-10 h-10" />, value: "15x", label: "Average Growth" },
-        { icon: <Globe className="w-10 h-10" />, value: "24/7", label: "Wand Monitoring" },
-        { icon: <Clock className="w-10 h-10" />, value: "10yr", label: "Spells Experience" }
+        { icon: <Clock className="w-10 h-10" />, value: "2025", label: "Founded" },
+        { icon: <Star className="w-10 h-10" />, value: "4+", label: "Clients Served" },
+        { icon: <Zap className="w-10 h-10" />, value: "2+", label: "Projects Delivered" },
+        { icon: <Globe className="w-10 h-10" />, value: "4", label: "Industries Served" }
     ];
 
     return (

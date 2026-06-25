@@ -34,25 +34,27 @@ const ProjectsCTA = () => {
                         </div>
 
                         <h2 className="font-magical text-4xl md:text-5xl lg:text-6xl text-text-primary font-bold mb-6">
-                            {theme === 'enchanted-scroll' 
-                                ? <>Ready to <span className="text-accent underline underline-offset-8">Start a Project?</span></>
-                                : <>Ready to Weave <span className="text-accent">Some Magic?</span></>
-                            }
+                            Ready to Grow Your <span className="text-accent underline underline-offset-8">Business Digitally?</span>
                         </h2>
 
                         <p className="font-body text-lg text-text-secondary max-w-2xl mb-10">
-                            {theme === 'enchanted-scroll'
-                                ? "Let's discuss how we can transform your digital presence and drive results for your business."
-                                : "Send us an owl. Let's discuss how we can transform your digital presence into something truly extraordinary."
-                            }
+                            Partner with Hogwartz Digital and transform your ideas into impactful digital experiences.
                         </p>
 
-                        <NavLink
-                            to="/contact"
-                            className="font-body px-10 py-5 rounded-lg font-bold tracking-wide uppercase transition-all bg-accent text-button-text hover:bg-highlight hover:scale-105 active:scale-95 shadow-lg"
-                        >
-                            {theme === 'enchanted-scroll' ? 'Get In Touch' : 'Start Your Journey'}
-                        </NavLink>
+                        <div className="flex flex-col sm:flex-row gap-5 items-center justify-center">
+                            <NavLink
+                                to="/contact"
+                                className="font-body px-10 py-5 rounded-lg font-bold tracking-wide transition-all bg-accent text-button-text hover:bg-highlight hover:scale-105 active:scale-95 shadow-lg"
+                            >
+                                Start Your Project
+                            </NavLink>
+                            <NavLink
+                                to="/contact"
+                                className="font-body px-10 py-5 rounded-lg font-bold tracking-wide transition-all border-2 border-accent text-text-primary hover:bg-accent/10 hover:scale-105 active:scale-95"
+                            >
+                                Book a Free Consultation
+                            </NavLink>
+                        </div>
                     </div>
                 </motion.div>
             </div>

@@ -109,7 +109,7 @@ const ServicesHero = ({ isDark, content }) => {
                                         <CheckCircle2 className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <p className="text-xl font-bold text-primary">100+</p>
+                                        <p className="text-xl font-bold text-primary">2+</p>
                                         <p className="text-xs font-bold text-text-muted uppercase tracking-widest">Projects Delivered</p>
                                     </div>
                                 </div>
@@ -118,8 +118,8 @@ const ServicesHero = ({ isDark, content }) => {
                                         <Globe className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <p className="text-xl font-bold text-primary">50+</p>
-                                        <p className="text-xs font-bold text-text-muted uppercase tracking-widest">Happy Clients</p>
+                                        <p className="text-xl font-bold text-primary">4+</p>
+                                        <p className="text-xs font-bold text-text-muted uppercase tracking-widest">Clients Served</p>
                                     </div>
                                 </div>
                             </div>
@@ -153,8 +153,8 @@ const ServicesHero = ({ isDark, content }) => {
                                             className="space-y-4 pt-2"
                                         >
                                             <div className="flex items-center justify-between">
-                                                <span className="text-xs font-bold text-primary uppercase tracking-tighter">Speed Mastery</span>
-                                                <span className="text-xs font-bold text-blue-600">+150%</span>
+                                                <span className="text-xs font-bold text-primary uppercase tracking-tighter">Performance Score</span>
+                                                <span className="text-xs font-bold text-blue-600">A+</span>
                                             </div>
                                             <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden text-blue-100">
                                                 <motion.div initial={{ width: 0 }} animate={{ width: '90%' }} className="h-full bg-blue-600 rounded-full shadow-[0_0_10px_rgba(37,99,235,0.4)]" />
@@ -195,8 +195,8 @@ const ServicesHero = ({ isDark, content }) => {
                                                 <TrendingUp className="w-7 h-7" />
                                             </div>
                                             <div>
-                                                <p className="text-xl font-bold text-white leading-tight">+245%</p>
-                                                <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Growth Factor</p>
+                                                <p className="text-xl font-bold text-white leading-tight">Growth</p>
+                                                <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Driven Strategy</p>
                                             </div>
                                         </motion.div>
                                     )}
@@ -229,12 +229,12 @@ const ServicesHero = ({ isDark, content }) => {
                                             className="grid grid-cols-2 gap-3 mt-4"
                                         >
                                             <div className="p-3 bg-slate-50 rounded-xl border border-primary/5 text-center">
-                                                <p className="text-lg font-bold text-primary leading-none">10x</p>
-                                                <p className="text-[9px] font-bold text-text-muted uppercase tracking-widest mt-1">ROAS</p>
+                                                <p className="text-lg font-bold text-primary leading-none">Targeted</p>
+                                                <p className="text-[9px] font-bold text-text-muted uppercase tracking-widest mt-1">Approach</p>
                                             </div>
                                             <div className="p-3 bg-slate-50 rounded-xl border border-primary/5 text-center">
-                                                <p className="text-lg font-bold text-primary leading-none">5M+</p>
-                                                <p className="text-[9px] font-bold text-text-muted uppercase tracking-widest mt-1">Reach</p>
+                                                <p className="text-lg font-bold text-primary leading-none">Local</p>
+                                                <p className="text-[9px] font-bold text-text-muted uppercase tracking-widest mt-1">Impact</p>
                                             </div>
                                         </motion.div>
                                     )}

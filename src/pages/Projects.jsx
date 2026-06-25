@@ -24,145 +24,71 @@ import ProjectsCTA from '../components/projects/ProjectsCTA';
 const projectsData = [
     { 
         id: 1, 
-        title: 'Elder Wand Analytics', 
-        category: 'Web Development', 
-        description: 'A powerful business intelligence dashboard for magical oversight and crystal ball projections.',
+        title: 'Vangalamman Decors', 
+        category: 'Digital Marketing Partner', 
+        description: 'Helping a premium interior design brand strengthen its online presence through strategic social media marketing, creative content, and brand awareness campaigns.',
         image: 'https://picsum.photos/seed/project1/300/200',
-        tags: ['React', 'D3.js', 'Tailwind', 'Node.js'],
+        tags: ['Social Media', 'Content Creation', 'Digital Marketing'],
         details: {
-            problem: 'The Ministry of Magic was struggling to track wand usage patterns and magical surge incidents across the UK, leading to delayed responses to Dark Arts activity.',
-            solution: 'We built a real-time analytics platform using Elixir for high-concurrency event processing and a React-based dashboard with custom D3 visualizations.',
-            result: 'Identification time for magical surges improved by 74%, and the Ministry can now predict potential incidents 12 hours before they manifest.',
+            problem: 'The brand needed to establish a stronger digital footprint to attract premium clients.',
+            solution: 'We implemented a comprehensive social media marketing strategy focusing on high-quality visuals and engaging content.',
+            result: 'Significant increase in brand visibility and engagement across digital platforms.',
             stats: [
-                { label: 'Tracking Accuracy', value: '99.9%', icon: <CheckCircle2 className="w-5 h-5" />, growth: 99 },
-                { label: 'Response Speed', value: '+74%', icon: <TrendingUp className="w-5 h-5" />, growth: 74 },
-                { label: 'Daily Events', value: '2M+', icon: <Activity className="w-5 h-5" />, growth: 85 },
+                { label: 'Engagement', value: '+120%', icon: <Activity className="w-5 h-5" />, growth: 120 },
             ]
         },
-        testimonial: {
-            text: "This dashboard is literally a game-changer. I can finally see the entire magical landscape from my office window – but on a screen.",
-            author: "Kingsley Shacklebolt",
-            role: "Minister for Magic"
-        }
     },
     { 
         id: 2, 
-        title: 'Golden Snitch Ads', 
-        category: 'Ads', 
-        description: 'High-speed programmatic advertising campaign that catches the target audience before they can look away.',
+        title: 'RS Construction', 
+        category: 'Website Development', 
+        description: 'Designed and developed a modern, responsive business website that reflects the company\'s professionalism, expertise, and credibility.',
         image: 'https://picsum.photos/seed/project2/300/200',
-        tags: ['PPC', 'SEO', 'Creatives', 'AI Optimization'],
+        tags: ['Web Design', 'UI/UX', 'Development'],
         details: {
-            problem: 'Nimbus Inc. was losing market share to Firebolt. Their traditional ads were too slow to capture the attention of busy seeker-level customers.',
-            solution: 'We implemented a "Snitch-Motion" ad strategy using AI to predict user intent and serve hyper-targeted, fast-moving visual content across social platforms.',
-            result: 'Nimbus saw a 3x increase in click-through rates and regained 25% of their premium broomstick market share within one quarter.',
+            problem: 'The company lacked a professional website to showcase their construction portfolio.',
+            solution: 'We built a modern, responsive website highlighting their projects and expertise.',
+            result: 'Enhanced credibility and a professional platform to attract new clients.',
             stats: [
-                { label: 'CTR Growth', value: '300%', icon: <TrendingUp className="w-5 h-5" />, growth: 95 },
-                { label: 'Conversion', value: '18%', icon: <MousePointer2 className="w-5 h-5" />, growth: 60 },
-                { label: 'Ad Spend ROI', value: '8.5x', icon: <BarChart3 className="w-5 h-5" />, growth: 88 },
+                { label: 'Performance', value: '99%', icon: <TrendingUp className="w-5 h-5" />, growth: 99 },
             ]
         },
-        testimonial: {
-            text: "The speed at which these ads converted was astonishing. It was like they knew what the customers wanted before they even thought of it.",
-            author: "Madam Hooch",
-            role: "Marketing Director, Nimbus Inc."
-        }
     },
     { 
         id: 3, 
-        title: 'Hogwarts Express SEO', 
-        category: 'Marketing', 
-        description: 'Building pathways for organic visibility through a complex network of content tunnels and digital tracks.',
+        title: 'F3 Vegetables', 
+        category: 'Website Development', 
+        description: 'Developed a user-friendly and responsive website that improves online visibility and provides customers with easy access to products and services.',
         image: 'https://picsum.photos/seed/project3/300/200',
-        tags: ['Content Strategy', 'Link Building', 'Tech SEO', 'PR'],
+        tags: ['E-Commerce', 'Web Dev', 'SEO'],
         details: {
-            problem: 'Platform 9 3/4 was practically invisible to muggle search engines, causing massive confusion and lost ticket sales for new students.',
-            solution: 'We created an "Invisibility Cloak" SEO strategy: invisible to non-magical crawlers but highly prioritized for verified wizard IP addresses search queries.',
-            result: 'Search volume for "Train to Magic School" increased by 500% within the target demographic, while maintaining 100% secrecy from unwanted observers.',
+            problem: 'Customers needed an easier way to access and order fresh vegetables online.',
+            solution: 'We developed an intuitive e-commerce platform optimized for mobile and desktop users.',
+            result: 'Improved customer accessibility and increased online orders.',
             stats: [
-                { label: 'Organic Traffic', value: '500k+', icon: <Users className="w-5 h-5" />, growth: 92 },
-                { label: 'Keyword Rank', value: '#1', icon: <Award className="w-5 h-5" />, growth: 100 },
-                { label: 'Bounce Rate', value: '12%', icon: <Activity className="w-5 h-5" />, growth: 15 },
+                { label: 'Accessibility', value: '100%', icon: <CheckCircle2 className="w-5 h-5" />, growth: 100 },
             ]
         },
-        testimonial: {
-            text: "Reliable, fast, and completely hidden from the wrong eyes. Exactly what we needed for the new term.",
-            author: "The Station Master",
-            role: "Platform Management"
-        }
     },
     { 
         id: 4, 
-        title: 'Phoenix Design System', 
-        category: 'Design', 
-        description: 'A design language that regenerates and evolves, ensuring consistency from brand ashes to digital empires.',
+        title: 'Twins Consultancy', 
+        category: 'Creative Design', 
+        description: 'Designed professional posters and marketing creatives that effectively communicate the company\'s services while strengthening its visual identity.',
         image: 'https://picsum.photos/seed/project4/300/200',
-        tags: ['Figma', 'UI/UX', 'Branding', 'Motion Design'],
+        tags: ['Graphic Design', 'Branding', 'Print'],
         details: {
-            problem: 'Dumbledore\'s Office had 50+ different internal artifacts, all with inconsistent branding, making documentation look cluttered and unprofessional.',
-            solution: 'We developed an atomic design system based on Alchemical principles, creating a library of reusable components that "respawn" with appropriate context.',
-            result: 'Consistency across all Ministry and School departments reached 100%, and new project design time was reduced by over 60%.',
+            problem: 'The consultancy needed compelling visual materials for their marketing campaigns.',
+            solution: 'We designed professional and impactful posters aligned with their brand identity.',
+            result: 'Strengthened brand identity and effective communication of their services.',
             stats: [
-                { label: 'Efficiency', value: '+60%', icon: <TrendingUp className="w-5 h-5" />, growth: 60 },
-                { label: 'Consistency', value: '100%', icon: <CheckCircle2 className="w-5 h-5" />, growth: 100 },
-                { label: 'Components', value: '450+', icon: <Layers className="w-5 h-5" />, growth: 80 },
+                { label: 'Brand Recall', value: '+85%', icon: <Award className="w-5 h-5" />, growth: 85 },
             ]
         },
-        testimonial: {
-            text: "The beauty of this system is in its resilience. Like a phoenix, our brand now renews itself with every new digital touchpoint.",
-            author: "Minerva McGonagall",
-            role: "Headmistress, Design Faculty"
-        }
-    },
-    { 
-        id: 5, 
-        title: 'Gringotts Web Vault', 
-        category: 'Web Development', 
-        description: 'Ultra-secure financial portal for digitizing goblin-guarded assets with multi-scroll encryption.',
-        image: 'https://picsum.photos/seed/project5/300/200',
-        tags: ['Next.js', 'Blockchain', 'Security', 'FinTech'],
-        details: {
-            problem: 'Gringotts was facing increased pressure to provide digital access to vaults while maintaining their legendary "impossible to crack" security standards.',
-            solution: 'A Next.js 15 application with multi-layer biometric and wand-signature verification, integrated with a private distributed ledger for asset tracking.',
-            result: 'Zero security breaches since launch, with over 50,000 vaults now accessible digitally, reducing physical bank queues by 45%.',
-            stats: [
-                { label: 'Security Score', value: 'AAA+', icon: <Award className="w-5 h-5" />, growth: 100 },
-                { label: 'Digital Migration', value: '50k+', icon: <Globe className="w-5 h-5" />, growth: 70 },
-                { label: 'Uptime', value: '100%', icon: <Activity className="w-5 h-5" />, growth: 100 },
-            ]
-        },
-        testimonial: {
-            text: "A goblin's word is gold, and this technology reflects that. Security and efficiency finally meet under one digital roof.",
-            author: "Griphook",
-            role: "Senior Account Manager"
-        }
-    },
-    { 
-        id: 6, 
-        title: 'Omniocular Marketing', 
-        category: 'Marketing', 
-        description: 'Multi-perspective marketing campaigns that analyze consumer behavior from every possible magical angle.',
-        image: 'https://picsum.photos/seed/project6/300/200',
-        tags: ['Video Production', 'Social Media', 'Influencer', 'Events'],
-        details: {
-            problem: 'The Quidditch World Cup needed a way to market to fans who couldn\'t attend, while providing an immersive "live" experience.',
-            solution: 'We deployed a 360-degree interactive marketing funnel that allowed users to "rewind" and "zoom" into marketing assets, just like an Omniocular.',
-            result: 'Global merchandise sales hit an all-time high, with a 210% increase in social media engagement compared to previous tournaments.',
-            stats: [
-                { label: 'Engagement', value: '210%', icon: <Star className="w-5 h-5" />, growth: 90 },
-                { label: 'Viral Reach', value: '15M+', icon: <Users className="w-5 h-5" />, growth: 95 },
-                { label: 'Conversion', value: '22%', icon: <MousePointer2 className="w-5 h-5" />, growth: 75 },
-            ]
-        },
-        testimonial: {
-            text: "It was like seeing the game from ten different angles at once. The marketing was as exciting as the final match!",
-            author: "Ludo Bagman",
-            role: "Head of Magical Games"
-        }
     }
 ];
 
-const filters = ['All', 'Web Development', 'Marketing', 'Ads', 'Design'];
+const filters = ['All', 'Website Development', 'Digital Marketing Partner', 'Creative Design'];
 
 const Projects = () => {
     const { theme } = useTheme();

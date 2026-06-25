@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { ArrowUpRight, Play } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 
-const ProjectCard = ({ title, category, index, isLarge, isDark }) => {
+const ProjectCard = ({ title, category, description, index, isLarge, isDark }) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -19,6 +19,7 @@ const ProjectCard = ({ title, category, index, isLarge, isDark }) => {
                 ${isDark ? 'hover:shadow-[0_25px_60px_-15px_rgba(212,175,55,0.15)] hover:border-accent/50' : ''}
             `}
         >
+            <NavLink to="/projects" className="absolute inset-0 z-40" aria-label={`View ${title} project`} />
             {/* 🪄 LUXURY REFLECTION OVERLAY */}
             {isDark && (
                 <div className="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none">
@@ -47,15 +48,24 @@ const ProjectCard = ({ title, category, index, isLarge, isDark }) => {
                         ${isDark ? 'text-accent/80 group-hover:text-highlight' : 'text-highlight'}`}>
                         {category}
                     </p>
-                    <div className="flex justify-between items-end gap-6">
-                        <h3 className={`font-magical font-bold leading-[1.1] transition-all duration-500
-                            ${isLarge ? 'text-4xl md:text-5xl lg:text-6xl tracking-tight' : 'text-2xl md:text-3xl'}
-                            text-white group-hover:text-highlight`}>
-                            {title}
-                        </h3>
+                    <div className="flex justify-between items-end gap-6 relative z-30">
+                        <div className="flex-1">
+                            <h3 className={`font-magical font-bold leading-[1.1] transition-all duration-500
+                                ${isLarge ? 'text-4xl md:text-5xl lg:text-6xl tracking-tight' : 'text-2xl md:text-3xl'}
+                                text-white group-hover:text-highlight`}>
+                                {title}
+                            </h3>
+                            <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+                                <div className="overflow-hidden">
+                                    <p className="mt-3 text-sm text-white/80 font-body line-clamp-2">
+                                        {description}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                         
                         {!isLarge ? (
-                            <div className={`w-12 h-12 rounded-full border flex items-center justify-center backdrop-blur-xl opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700
+                            <div className={`w-12 h-12 rounded-full border flex items-center justify-center backdrop-blur-xl opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 shrink-0
                                 ${!isDark ? 'bg-dark-block border-dark-block/20' : 'bg-accent/10 border-accent/30 shadow-[0_0_15px_rgba(212,175,55,0.2)]'}`}>
                                 <ArrowUpRight className={`w-6 h-6 ${!isDark ? 'text-accent-light' : 'text-accent'}`} />
                             </div>
@@ -85,15 +95,27 @@ const ProjectsPreview = () => {
     const isDark = theme === 'dark-arts';
 
     const projects = [
-        { title: "Crimson Grimoire", category: "Web Development" },
-        { title: "Aero Spells", category: "Brand Identity" },
-        { title: "Lumina Archive", category: "UI/UX Design" },
-        { title: "Nocturne Social", category: "Design" },
-        { title: "The Grand Artifact", category: "Digital Marketing", isLarge: true }, // CENTER HIGHLIGHT
-        { title: "Azure Artifact", category: "Brand Identity" },
-        { title: "Ember Essence", category: "Web Design" },
-        { title: "Void Vision", category: "Strategy" },
-        { title: "Prism Project", category: "Production" },
+        { 
+            title: "Vangalamman Decors", 
+            category: "Digital Marketing Partner", 
+            description: "Helping a premium interior design brand strengthen its online presence through strategic social media marketing and creative content."
+        },
+        { 
+            title: "RS Construction", 
+            category: "Website Development", 
+            description: "Designed and developed a professional business website that reflects the company's expertise and credibility."
+        },
+        { 
+            title: "F3 Vegetables", 
+            category: "Website Development", 
+            description: "Built a responsive and user-friendly website to improve online visibility and customer accessibility."
+        },
+        { 
+            title: "Twins Consultancy", 
+            category: "Creative Design", 
+            description: "Created impactful poster designs that effectively communicate the company's services and strengthen its brand identity.",
+            isLarge: true 
+        }
     ];
 
     return (
@@ -138,15 +160,8 @@ const ProjectsPreview = () => {
                         {/* MIDDLE ROW: 1 BIG CENTER CARD */}
                         <div className="flex justify-center -mx-4 md:-mx-12 lg:-mx-24">
                             <div className="w-full max-w-5xl">
-                                <ProjectCard {...projects[4]} index={4} isLarge={true} isDark={true} />
+                                <ProjectCard {...projects[3]} index={3} isLarge={true} isDark={true} />
                             </div>
-                        </div>
-                        
-                        {/* BOTTOM ROW: 3 SMALL CARDS */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {projects.slice(5, 8).map((project, index) => (
-                                <ProjectCard key={index + 5} {...project} index={index + 5} isDark={true} />
-                            ))}
                         </div>
                     </div>
                 ) : (

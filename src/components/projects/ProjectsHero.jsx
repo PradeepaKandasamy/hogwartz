@@ -6,27 +6,27 @@ import { Sparkles, ArrowRight, Zap, Target, MousePointer2, TrendingUp, CheckCirc
 const showcaseProjects = [
     {
         id: 1,
-        title: "Elder Wand Analytics",
-        metric: "+210% Conversion",
+        title: "Vangalamman Decors",
+        metric: "Digital Marketing Partner",
         image: "https://picsum.photos/seed/projecthero1/600/400",
         smallImage: "https://picsum.photos/seed/projectsmall1/300/200",
-        tag: "UI/UX Redesign"
+        tag: "Digital Marketing Partner"
     },
     {
         id: 2,
-        title: "Gringotts Web Vault",
-        metric: "100% Security Score",
+        title: "RS Construction",
+        metric: "Website Development",
         image: "https://picsum.photos/seed/projecthero2/600/400",
         smallImage: "https://picsum.photos/seed/projectsmall2/300/200",
-        tag: "FinTech Solution"
+        tag: "Website Development"
     },
     {
         id: 3,
-        title: "Golden Snitch Ads",
-        metric: "8.5x ROI Impact",
+        title: "F3 Vegetables",
+        metric: "Website Development",
         image: "https://picsum.photos/seed/projecthero3/600/400",
         smallImage: "https://picsum.photos/seed/projectsmall3/300/200",
-        tag: "Ad Strategy"
+        tag: "Website Development"
     }
 ];
 
@@ -92,17 +92,17 @@ const ProjectsHero = ({ isDark }) => {
                         >
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/10 bg-white shadow-sm">
                                 <Sparkles className="w-4 h-4 text-accent" />
-                                <span className="font-heading text-xs font-bold tracking-widest uppercase text-primary">Portfolio Showcase</span>
+                                <span className="font-heading text-xs font-bold tracking-widest uppercase text-primary">OUR WORK</span>
                             </div>
 
                             <h1 className="font-heading font-extrabold text-4xl md:text-5xl lg:text-7xl text-[#1E293B] leading-[1.1]">
                                 Where Ideas <br />
-                                Transform into <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-highlight">Digital Experiences</span>
+                                Transform Into <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-highlight">Digital Success</span>
                             </h1>
 
                             <p className="font-body text-lg md:text-xl text-text-muted leading-relaxed max-w-xl font-medium">
-                                Explore our crafted projects where strategy meets creativity and innovation delivers results. High-performance artifacts designed for category leaders.
+                                Every project we undertake is built with strategy, creativity, and measurable outcomes. Explore how we help businesses strengthen their digital presence and achieve growth.
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center gap-5 pt-4">
@@ -122,13 +122,13 @@ const ProjectsHero = ({ isDark }) => {
                             {/* Stats mini bar */}
                             <div className="flex items-center gap-8 pt-6 border-t border-primary/5">
                                 <div>
-                                    <p className="text-2xl font-bold text-primary">150+</p>
-                                    <p className="text-xs font-bold text-text-muted uppercase tracking-widest">Spells Cast</p>
+                                    <p className="text-2xl font-bold text-primary">2+</p>
+                                    <p className="text-xs font-bold text-text-muted uppercase tracking-widest">Projects Delivered</p>
                                 </div>
                                 <div className="w-px h-10 bg-primary/10" />
                                 <div>
-                                    <p className="text-2xl font-bold text-primary">99%</p>
-                                    <p className="text-xs font-bold text-text-muted uppercase tracking-widest">Client Satisfaction</p>
+                                    <p className="text-2xl font-bold text-primary">4+</p>
+                                    <p className="text-xs font-bold text-text-muted uppercase tracking-widest">Clients Served</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -218,21 +218,21 @@ const ProjectsHero = ({ isDark }) => {
                                 transition={{ delay: 0.3 }}
                                 className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent font-bold text-xs tracking-widest uppercase mb-6 shadow-[0_0_15px_rgba(201,168,76,0.1)]"
                             >
-                                <Sparkles className="w-4 h-4 animate-pulse" /> <span className="font-body font-bold text-xs md:text-sm tracking-widest uppercase">The Archives of Arcane Achievement</span>
+                                <Sparkles className="w-4 h-4 animate-pulse" /> <span className="font-body font-bold text-xs md:text-sm tracking-widest uppercase">OUR WORK</span>
                             </motion.div>
                             
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-magical font-bold leading-[1.2] mb-6 tracking-tight text-white drop-shadow-[0_0_30px_rgba(201,168,76,0.3)]">
-                                Our Work Speaks in <br />
+                                Where Ideas Transform Into <br />
                                 <span className="relative">
-                                    <span className="text-accent underline decoration-accent/20 underline-offset-[12px]">Spells</span>
+                                    <span className="text-accent underline decoration-accent/20 underline-offset-[12px]">Digital Success</span>
                                     <motion.div animate={{ opacity: [0.1, 0.4, 0.1] }} transition={{ duration: 3, repeat: Infinity }} className="absolute -top-6 -right-6 hidden md:block">
                                         <Sparkles className="w-12 h-12 text-accent opacity-20" />
                                     </motion.div>
-                                </span> & Results
+                                </span>
                             </h1>
                             
                             <p className="text-lg md:text-xl font-heading max-w-2xl leading-relaxed mb-10 text-text-secondary">
-                                We assemble high-performance artifacts that combine <span className="text-accent italic">legendary aesthetics</span> with absolute conversion magic.
+                                Every project we undertake is built with strategy, creativity, and measurable outcomes. Explore how we help businesses strengthen their digital presence and achieve growth.
                             </p>
                             
                             <div className="flex flex-wrap gap-6 items-center justify-center">
@@ -246,8 +246,8 @@ const ProjectsHero = ({ isDark }) => {
                                         </div>
                                     ))}
                                     <div className="pl-4 text-left">
-                                        <p className="font-bold text-text-primary text-xs tracking-wide">Trusted by 50+</p>
-                                        <p className="text-text-muted text-[10px]">Organizations</p>
+                                        <p className="font-bold text-text-primary text-xs tracking-wide">Trusted by 4+</p>
+                                        <p className="text-text-muted text-[10px]">Clients</p>
                                     </div>
                                 </div>
                             </div>

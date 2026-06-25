@@ -19,7 +19,7 @@ const Footer = () => {
                     </NavLink>
                     <p className={`font-body text-sm leading-relaxed mb-6 transition-colors duration-500
                         ${isLight ? 'text-footer-paragraph' : 'text-text-secondary'}`}>
-                        We weave digital magic to bring your ideas to life. From spellbinding websites to enchanting marketing campaigns.
+                        We help businesses grow through strategic marketing, modern technology, and creative digital experiences.
                     </p>
                     <div className="flex gap-4">
                         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={`p-2 rounded-full transition-all duration-300
@@ -41,16 +41,16 @@ const Footer = () => {
                 <div>
                     <h4 className="font-heading text-xl font-semibold mb-6 footer-heading" style={{ color: 'var(--color-footer-heading)' }}>Quick Links</h4>
                     <ul className="flex flex-col gap-3 font-body text-sm">
-                        <li><NavLink to="/about" className={`transition-colors duration-300 ${isLight ? 'text-footer-link hover:text-accent-light' : 'text-text-secondary hover:text-highlight'}`}>About Story</NavLink></li>
-                        <li><NavLink to="/services" className={`transition-colors duration-300 ${isLight ? 'text-footer-link hover:text-accent-light' : 'text-text-secondary hover:text-highlight'}`}>Our Spells (Services)</NavLink></li>
-                        <li><NavLink to="/projects" className={`transition-colors duration-300 ${isLight ? 'text-footer-link hover:text-accent-light' : 'text-text-secondary hover:text-highlight'}`}>Magic Scroll (Projects)</NavLink></li>
-                        <li><NavLink to="/team" className={`transition-colors duration-300 ${isLight ? 'text-footer-link hover:text-accent-light' : 'text-text-secondary hover:text-highlight'}`}>The Wizards (Team)</NavLink></li>
+                        <li><NavLink to="/about" className={`transition-colors duration-300 ${isLight ? 'text-footer-link hover:text-accent-light' : 'text-text-secondary hover:text-highlight'}`}>About Us</NavLink></li>
+                        <li><NavLink to="/services" className={`transition-colors duration-300 ${isLight ? 'text-footer-link hover:text-accent-light' : 'text-text-secondary hover:text-highlight'}`}>Services</NavLink></li>
+                        <li><NavLink to="/projects" className={`transition-colors duration-300 ${isLight ? 'text-footer-link hover:text-accent-light' : 'text-text-secondary hover:text-highlight'}`}>Projects</NavLink></li>
+                        <li><NavLink to="/team" className={`transition-colors duration-300 ${isLight ? 'text-footer-link hover:text-accent-light' : 'text-text-secondary hover:text-highlight'}`}>Team</NavLink></li>
                     </ul>
                 </div>
 
                 {/* Services */}
                 <div>
-                    <h4 className="font-heading text-xl font-semibold mb-6 footer-heading" style={{ color: 'var(--color-footer-heading)' }}>Our Magic</h4>
+                    <h4 className="font-heading text-xl font-semibold mb-6 footer-heading" style={{ color: 'var(--color-footer-heading)' }}>Our Services</h4>
                     <ul className="flex flex-col gap-3 font-body text-sm">
                         <li><NavLink to="/services" className={`transition-colors duration-300 ${isLight ? 'text-footer-link hover:text-accent-light' : 'text-text-secondary hover:text-highlight'}`}>Web Development</NavLink></li>
                         <li><NavLink to="/services" className={`transition-colors duration-300 ${isLight ? 'text-footer-link hover:text-accent-light' : 'text-text-secondary hover:text-highlight'}`}>Digital Marketing</NavLink></li>
@@ -62,13 +62,13 @@ const Footer = () => {
 
                 {/* Contact info */}
                 <div>
-                    <h4 className="font-heading text-xl font-semibold mb-6 footer-heading" style={{ color: 'var(--color-footer-heading)' }}>Owl Post</h4>
+                    <h4 className="font-heading text-xl font-semibold mb-6 footer-heading" style={{ color: 'var(--color-footer-heading)' }}>Contact Us</h4>
                     <ul className="flex flex-col gap-3 font-body text-sm">
                         <li className="flex items-center gap-2 cursor-pointer">
                             <Mail className="w-4 h-4 text-accent" />
-                            <a href="mailto:hello@hogwartzdigital.com" className={`transition-colors duration-300 ${isLight ? 'text-footer-link hover:text-accent-light' : 'text-text-secondary hover:text-highlight'}`}>hello@hogwartzdigital.com</a>
+                            <a href="mailto:hogwartzdigitalworks@gmail.com" className={`transition-colors duration-300 ${isLight ? 'text-footer-link hover:text-accent-light' : 'text-text-secondary hover:text-highlight'}`}>hogwartzdigitalworks@gmail.com</a>
                         </li>
-                        <li className={`${isLight ? 'text-footer-paragraph' : 'text-text-secondary'}`}>Diagon Alley, Cloud Servers, Web Space</li>
+                        <li className={`${isLight ? 'text-footer-paragraph' : 'text-text-secondary'}`}>Karur, Tamil Nadu, India</li>
                     </ul>
                 </div>
             </div>

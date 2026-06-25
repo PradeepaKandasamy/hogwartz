@@ -158,13 +158,13 @@ const SkillsExpertise = ({ isDark }) => {
                         </p>
                         
                         <div className="grid grid-cols-2 gap-8 pt-8">
-                             <div className="space-y-px">
-                                <p className="text-4xl md:text-5xl font-heading font-bold text-accent">98%</p>
-                                <p className="text-[10px] md:text-xs uppercase font-body font-bold tracking-[0.2em] text-text-muted">Mastery Index</p>
+                            <div className="space-y-px">
+                                <p className="text-4xl md:text-5xl font-heading font-bold text-accent">4</p>
+                                <p className="text-[10px] md:text-xs uppercase font-body font-bold tracking-[0.2em] text-text-muted">Creative Professionals</p>
                             </div>
                             <div className="space-y-px">
-                                <p className="text-4xl md:text-5xl font-heading font-bold text-accent">10+</p>
-                                <p className="text-[10px] md:text-xs uppercase font-body font-bold tracking-[0.2em] text-text-muted">Artifacts/Mo</p>
+                                <p className="text-4xl md:text-5xl font-heading font-bold text-accent">4</p>
+                                <p className="text-[10px] md:text-xs uppercase font-body font-bold tracking-[0.2em] text-text-muted">Industries Served</p>
                             </div>
                         </div>
                     </div>
