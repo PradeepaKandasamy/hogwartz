@@ -79,11 +79,6 @@ const Services = () => {
             { number: "04", title: "Development", icon: <Code className="ml-8 w-8 h-8"/>, desc: "Transforming ideas into scalable digital solutions." },
             { number: "05", title: "Launch", icon: <Rocket className="ml-8 w-8 h-8"/>, desc: "Deploying with precision and performance." },
             { number: "06", title: "Growth", icon: <Zap className="ml-8 w-8 h-8"/>, desc: "Optimizing continuously for long-term success." },
-        ],
-        pricing: [
-            { name: isDark ? "Apprentice" : "Essential", price: "$999", period: "/project", description: "Essential digital presence for emerging brands.", features: ["Single Page Citadel", "Custom Brand Soul", "Mobile Enchantment", "3 Months Support"], popular: false },
-            { name: isDark ? "Sorcerer" : "Professional", price: "$2,499", period: "/project", description: "Complete digital dominance for growing entities.", features: ["Full Citadel (5-8 Pages)", "Advanced Marketing Spells", "SEO Mastery", "Premium UI Visuals", "1-Year Maintenance"], popular: true },
-            { name: isDark ? "Archmage" : "Enterprise", price: "Custom", period: "", description: "Limitless power and scale for industry leaders.", features: ["Infinite Page Citadels", "Global Scaling Spells", "Dedicated Scribe Team", "24/7 Priority Aura"], popular: false },
         ]
     };
 

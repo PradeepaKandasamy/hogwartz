@@ -63,7 +63,7 @@ const ServicesHero = ({ isDark, content }) => {
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
-                            className="space-y-8"
+                            className="space-y-8 flex flex-col items-center text-center md:items-start md:text-left md:block"
                         >
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/10 bg-white/60 text-primary shadow-sm backdrop-blur-md">
                                 <Sparkles className="w-4 h-4 text-accent" />
@@ -76,16 +76,16 @@ const ServicesHero = ({ isDark, content }) => {
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-highlight">Results</span>
                             </h1>
 
-                            <p className="font-body text-lg md:text-xl text-text-muted leading-relaxed max-w-xl font-medium">
+                            <p className="font-body text-lg md:text-xl text-text-muted leading-relaxed max-w-xl mx-auto md:mx-0 font-medium">
                                 We design, build, and scale digital solutions that elevate brands and accelerate growth. High-performance artifacts designed for category leaders.
                             </p>
 
-                            <div className="flex items-center gap-4 py-2">
+                            <div className="flex items-center justify-center md:justify-start gap-4 py-2 w-full">
                                 <MousePointer2 className="w-5 h-5 text-accent animate-bounce" />
                                 <p className="text-sm font-bold text-primary tracking-widest uppercase opacity-60">Interactive Portfolio Explorer</p>
                             </div>
 
-                            <div className="flex flex-col sm:flex-row items-center gap-5 pt-2">
+                            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-5 pt-2 w-full">
                                 <NavLink
                                     to="/contact"
                                     className="group px-10 py-5 rounded-2xl bg-[#1E293B] text-white font-bold transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-2"
@@ -103,46 +103,46 @@ const ServicesHero = ({ isDark, content }) => {
                             </div>
 
                             {/* Trust Indicators */}
-                            <div className="flex flex-wrap items-center gap-8 pt-6 border-t border-primary/5">
+                            <div className="flex flex-wrap items-center justify-center md:justify-start gap-8 pt-6 border-t border-primary/5 w-full max-w-md mx-auto md:mx-0 md:max-w-none">
                                 <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+                                    <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent shrink-0">
                                         <CheckCircle2 className="w-6 h-6" />
                                     </div>
-                                    <div>
-                                        <p className="text-xl font-bold text-primary">2+</p>
-                                        <p className="text-xs font-bold text-text-muted uppercase tracking-widest">Projects Delivered</p>
+                                    <div className="text-left">
+                                        <p className="text-xl font-bold text-primary leading-none mb-1">2+</p>
+                                        <p className="text-[10px] font-bold text-text-muted uppercase tracking-widest">Projects Delivered</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+                                    <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent shrink-0">
                                         <Globe className="w-6 h-6" />
                                     </div>
-                                    <div>
-                                        <p className="text-xl font-bold text-primary">4+</p>
-                                        <p className="text-xs font-bold text-text-muted uppercase tracking-widest">Clients Served</p>
+                                    <div className="text-left">
+                                        <p className="text-xl font-bold text-primary leading-none mb-1">4+</p>
+                                        <p className="text-[10px] font-bold text-text-muted uppercase tracking-widest">Clients Served</p>
                                     </div>
                                 </div>
                             </div>
                         </motion.div>
 
                         {/* Right Side: Visual Interactive Cards */}
-                        <div className="relative flex items-center justify-center h-[550px] lg:h-[650px]">
+                        <div className="hidden md:flex relative flex-col lg:block items-center justify-center gap-8 lg:gap-0 lg:h-[650px] w-full mt-12 lg:mt-0">
                             {/* Layered Card 1: Web Dev */}
                             <motion.div
-                                initial={{ opacity: 0, x: 50 }}
+                                initial={{ opacity: 0, y: 30 }}
                                 animate={getCardStyles('web')}
                                 transition={{ type: "spring", damping: 20, stiffness: 150 }}
                                 onMouseEnter={() => setHoveredService('web')}
                                 onMouseLeave={() => setHoveredService(null)}
-                                className="absolute top-12 left-10 lg:left-0 w-72 p-8 bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-primary/5 backdrop-blur-xl group cursor-default"
+                                className="relative mx-auto lg:mx-0 lg:absolute lg:top-12 lg:left-0 w-full max-w-[320px] lg:max-w-none lg:w-72 p-6 sm:p-8 bg-white rounded-[2rem] sm:rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-primary/5 backdrop-blur-xl group cursor-default"
                             >
-                                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500
+                                <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 transition-all duration-500
                                     ${hoveredService === 'web' ? 'bg-blue-600 text-white shadow-[0_0_30px_rgba(37,99,235,0.4)]' : 'bg-blue-500/10 text-blue-600'}
                                 `}>
-                                    <Code className="w-8 h-8" />
+                                    <Code className="w-6 h-6 sm:w-8 sm:h-8" />
                                 </div>
-                                <h3 className="text-xl font-bold text-[#D4AF37] mb-3">Web Development</h3>
-                                <p className="text-sm text-text-muted font-medium mb-6 leading-relaxed">High-performance platforms engineered for infinite scale.</p>
+                                <h3 className="text-lg sm:text-xl font-bold text-[#D4AF37] mb-2 sm:mb-3">Web Development</h3>
+                                <p className="text-xs sm:text-sm text-text-muted font-medium mb-4 sm:mb-6 leading-relaxed">High-performance platforms engineered for infinite scale.</p>
                                 
                                 <AnimatePresence>
                                     {hoveredService === 'web' && (
@@ -150,11 +150,11 @@ const ServicesHero = ({ isDark, content }) => {
                                             initial={{ opacity: 0, height: 0 }}
                                             animate={{ opacity: 1, height: 'auto' }}
                                             exit={{ opacity: 0, height: 0 }}
-                                            className="space-y-4 pt-2"
+                                            className="space-y-3 sm:space-y-4 pt-2"
                                         >
                                             <div className="flex items-center justify-between">
-                                                <span className="text-xs font-bold text-primary uppercase tracking-tighter">Performance Score</span>
-                                                <span className="text-xs font-bold text-blue-600">A+</span>
+                                                <span className="text-[10px] sm:text-xs font-bold text-primary uppercase tracking-tighter">Performance Score</span>
+                                                <span className="text-[10px] sm:text-xs font-bold text-blue-600">A+</span>
                                             </div>
                                             <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden text-blue-100">
                                                 <motion.div initial={{ width: 0 }} animate={{ width: '90%' }} className="h-full bg-blue-600 rounded-full shadow-[0_0_10px_rgba(37,99,235,0.4)]" />
@@ -166,22 +166,22 @@ const ServicesHero = ({ isDark, content }) => {
 
                             {/* --- CENTERPIECE (HIGHLIGHTED) Card 2: Marketing --- */}
                             <motion.div
-                                initial={{ opacity: 0, x: 50 }}
+                                initial={{ opacity: 0, y: 30 }}
                                 animate={getCardStyles('marketing')}
                                 transition={{ type: "spring", damping: 20, stiffness: 150 }}
                                 onMouseEnter={() => setHoveredService('marketing')}
                                 onMouseLeave={() => setHoveredService(null)}
-                                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 p-9 rounded-[2.5rem] transition-all duration-500 cursor-default border border-accent/20
+                                className={`relative mx-auto lg:mx-0 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 w-full max-w-[320px] lg:max-w-none lg:w-80 p-7 sm:p-9 rounded-[2rem] sm:rounded-[2.5rem] transition-all duration-500 cursor-default border border-accent/20
                                     ${hoveredService === 'marketing' || !hoveredService ? 'bg-gradient-to-br from-[#1E2A38] to-[#243447] text-white shadow-[0_30px_70px_rgba(0,0,0,0.35)]' : 'bg-white shadow-[0_30px_60px_rgba(0,0,0,0.1)]'}
                                 `}
                             >
-                                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500
+                                <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 transition-all duration-500
                                     ${hoveredService === 'marketing' || !hoveredService ? 'bg-accent text-primary shadow-[0_0_40px_rgba(201,168,76,0.6)]' : 'bg-accent/10 text-accent'}
                                 `}>
-                                    <Megaphone className="w-9 h-9" />
+                                    <Megaphone className="w-7 h-7 sm:w-9 sm:h-9" />
                                 </div>
-                                <h3 className={`text-2xl font-bold mb-3 transition-colors ${hoveredService === 'marketing' || !hoveredService ? 'text-white' : 'text-primary'}`}>Digital Marketing</h3>
-                                <p className={`text-sm font-medium leading-relaxed transition-colors ${hoveredService === 'marketing' || !hoveredService ? 'text-slate-300' : 'text-text-muted'}`}>Performance-driven strategies designed to scale brand visibility and ROI.</p>
+                                <h3 className={`text-xl sm:text-2xl font-bold mb-2 sm:mb-3 transition-colors ${hoveredService === 'marketing' || !hoveredService ? 'text-white' : 'text-primary'}`}>Digital Marketing</h3>
+                                <p className={`text-xs sm:text-sm font-medium leading-relaxed transition-colors ${hoveredService === 'marketing' || !hoveredService ? 'text-slate-300' : 'text-text-muted'}`}>Performance-driven strategies designed to scale brand visibility and ROI.</p>
                                 
                                 <AnimatePresence>
                                     {(hoveredService === 'marketing' || !hoveredService) && (
@@ -189,14 +189,14 @@ const ServicesHero = ({ isDark, content }) => {
                                             initial={{ opacity: 0, y: 10 }}
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0, y: 10 }}
-                                            className={`mt-6 p-4 rounded-2xl border flex items-center gap-4 transition-colors ${!hoveredService || hoveredService === 'marketing' ? 'bg-white/10 border-white/20' : 'bg-slate-50 border-primary/5'}`}
+                                            className={`mt-4 sm:mt-6 p-3 sm:p-4 rounded-xl sm:rounded-2xl border flex items-center gap-3 sm:gap-4 transition-colors ${!hoveredService || hoveredService === 'marketing' ? 'bg-white/10 border-white/20' : 'bg-slate-50 border-primary/5'}`}
                                         >
-                                            <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent">
-                                                <TrendingUp className="w-7 h-7" />
+                                            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent shrink-0">
+                                                <TrendingUp className="w-5 h-5 sm:w-7 sm:h-7" />
                                             </div>
                                             <div>
-                                                <p className="text-xl font-bold text-white leading-tight">Growth</p>
-                                                <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Driven Strategy</p>
+                                                <p className="text-lg sm:text-xl font-bold text-white leading-tight">Growth</p>
+                                                <p className="text-[9px] sm:text-[10px] text-slate-400 font-bold uppercase tracking-widest">Driven Strategy</p>
                                             </div>
                                         </motion.div>
                                     )}
@@ -205,20 +205,20 @@ const ServicesHero = ({ isDark, content }) => {
 
                             {/* Layered Card 3: Ads */}
                             <motion.div
-                                initial={{ opacity: 0, x: 50 }}
+                                initial={{ opacity: 0, y: 30 }}
                                 animate={getCardStyles('ads')}
                                 transition={{ type: "spring", damping: 20, stiffness: 150 }}
                                 onMouseEnter={() => setHoveredService('ads')}
                                 onMouseLeave={() => setHoveredService(null)}
-                                className="absolute bottom-12 right-10 lg:right-0 w-72 p-8 bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-primary/5 cursor-default group"
+                                className="relative mx-auto lg:mx-0 lg:absolute lg:bottom-12 lg:right-0 w-full max-w-[320px] lg:max-w-none lg:w-72 p-6 sm:p-8 bg-white rounded-[2rem] sm:rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-primary/5 cursor-default group"
                             >
-                                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500
+                                <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 transition-all duration-500
                                     ${hoveredService === 'ads' ? 'bg-green-600 text-white shadow-[0_0_30px_rgba(22,163,74,0.4)]' : 'bg-green-500/10 text-green-600'}
                                 `}>
-                                    <Target className="w-8 h-8" />
+                                    <Target className="w-6 h-6 sm:w-8 sm:h-8" />
                                 </div>
-                                <h3 className="text-xl font-bold text-primary mb-3">Ad Campaigns</h3>
-                                <p className="text-sm text-text-muted font-medium mb-4 leading-relaxed">Precision-targeted campaigns that turn clicks into meaningful revenue.</p>
+                                <h3 className="text-lg sm:text-xl font-bold text-primary mb-2 sm:mb-3">Ad Campaigns</h3>
+                                <p className="text-xs sm:text-sm text-text-muted font-medium mb-3 sm:mb-4 leading-relaxed">Precision-targeted campaigns that turn clicks into meaningful revenue.</p>
                                 
                                 <AnimatePresence>
                                     {hoveredService === 'ads' && (
@@ -226,15 +226,15 @@ const ServicesHero = ({ isDark, content }) => {
                                             initial={{ opacity: 0, scale: 0.95 }}
                                             animate={{ opacity: 1, scale: 1 }}
                                             exit={{ opacity: 0, scale: 0.95 }}
-                                            className="grid grid-cols-2 gap-3 mt-4"
+                                            className="grid grid-cols-2 gap-2 sm:gap-3 mt-3 sm:mt-4"
                                         >
-                                            <div className="p-3 bg-slate-50 rounded-xl border border-primary/5 text-center">
-                                                <p className="text-lg font-bold text-primary leading-none">Targeted</p>
-                                                <p className="text-[9px] font-bold text-text-muted uppercase tracking-widest mt-1">Approach</p>
+                                            <div className="p-2 sm:p-3 bg-slate-50 rounded-lg sm:rounded-xl border border-primary/5 text-center">
+                                                <p className="text-base sm:text-lg font-bold text-primary leading-none">Targeted</p>
+                                                <p className="text-[8px] sm:text-[9px] font-bold text-text-muted uppercase tracking-widest mt-1">Approach</p>
                                             </div>
-                                            <div className="p-3 bg-slate-50 rounded-xl border border-primary/5 text-center">
-                                                <p className="text-lg font-bold text-primary leading-none">Local</p>
-                                                <p className="text-[9px] font-bold text-text-muted uppercase tracking-widest mt-1">Impact</p>
+                                            <div className="p-2 sm:p-3 bg-slate-50 rounded-lg sm:rounded-xl border border-primary/5 text-center">
+                                                <p className="text-base sm:text-lg font-bold text-primary leading-none">Local</p>
+                                                <p className="text-[8px] sm:text-[9px] font-bold text-text-muted uppercase tracking-widest mt-1">Impact</p>
                                             </div>
                                         </motion.div>
                                     )}
@@ -242,7 +242,7 @@ const ServicesHero = ({ isDark, content }) => {
                             </motion.div>
 
                             {/* Decorative background glow for cards */}
-                            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/5 rounded-full blur-[100px] -z-10 transition-opacity duration-1000 ${hoveredService ? 'opacity-40' : 'opacity-80'}`} />
+                            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[320px] lg:w-[120%] h-full lg:h-[120%] bg-accent/5 rounded-[4rem] lg:rounded-full blur-[80px] sm:blur-[100px] -z-10 transition-opacity duration-1000 ${hoveredService ? 'opacity-40' : 'opacity-80'}`} />
                         </div>
                     </div>
                 ) : (
