@@ -6,7 +6,7 @@ import TeamValues from '../components/team/TeamValues';
 import SkillsExpertise from '../components/team/SkillsExpertise';
 import CultureGallery from '../components/team/CultureGallery';
 import TeamQuotes from '../components/team/TeamQuotes';
-import TeamCTA from '../components/team/TeamCTA';
+import ContactBanner from '../components/home/ContactBanner';
 
 const Team = () => {
     const { theme } = useTheme();
@@ -16,7 +16,7 @@ const Team = () => {
         <div className={`overflow-x-hidden ${isDark ? 'theme-dark-arts' : 'theme-enchanted'} bg-background transition-colors duration-700`}>
             <Helmet>
                 <title>Meet Our Team | Hogwartz Digital</title>
-                <meta name="description" content="Meet the wizards behind Hogwartz Digital: Developers, Designers, and Marketers bringing magic to the web." />
+                <meta name="description" content={isDark ? "Meet the wizards behind Hogwartz Digital: Developers, Designers, and Marketers bringing magic to the web." : "Meet the team behind Hogwartz Digital: Strategists, Designers, and Developers building professional digital solutions."} />
             </Helmet>
 
             <TeamHero isDark={isDark} />
@@ -31,7 +31,7 @@ const Team = () => {
 
             <TeamQuotes isDark={isDark} />
 
-            <TeamCTA />
+            <ContactBanner />
         </div>
     );
 };

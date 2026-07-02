@@ -19,7 +19,7 @@ import ProjectsGrid from '../components/projects/ProjectsGrid';
 import CaseStudy from '../components/projects/CaseStudy';
 import Testimonials from '../components/projects/Testimonials';
 import ToolsTech from '../components/projects/ToolsTech';
-import ProjectsCTA from '../components/projects/ProjectsCTA';
+import ContactBanner from '../components/home/ContactBanner';
 
 const projectsData = [
     { 
@@ -106,8 +106,8 @@ const Projects = () => {
     return (
         <div className={`overflow-x-hidden ${isDark ? 'theme-dark-arts' : 'theme-enchanted'} bg-background transition-colors duration-700`}>
             <Helmet>
-                <title>Our Spells & Results | Hogwartz Digital Projects</title>
-                <meta name="description" content="Explore our magical portfolio of web development, marketing, and design projects. Each case study tells a story of transformation." />
+                <title>{isDark ? "Our Spells & Results | Hogwartz Digital Projects" : "Our Projects & Results | Hogwartz Digital"}</title>
+                <meta name="description" content={isDark ? "Explore our magical portfolio of web development, marketing, and design projects. Each case study tells a story of transformation." : "Explore our portfolio of web development, marketing, and design projects. Each case study tells a story of transformation and growth."} />
             </Helmet>
 
             <ProjectsHero isDark={isDark} />
@@ -125,7 +125,7 @@ const Projects = () => {
             
             <Testimonials isDark={isDark} />
 
-            <ProjectsCTA />
+            <ContactBanner />
 
             <CaseStudy 
                 project={selectedProject} 

@@ -75,7 +75,7 @@ const ContactForm = ({ isDark }) => {
                                 type="text"
                                 {...register('name', { required: "Tell us your name" })}
                                 className={`${inputClasses} ${errors.name ? 'border-red-500/50' : ''}`}
-                                placeholder="E.g. Albus Dumbledore"
+                                placeholder={isDark ? "E.g. Albus Dumbledore" : "E.g. John Doe"}
                             />
                             {errors.name && <span className="text-red-500 text-xs mt-2 block font-medium">{errors.name.message}</span>}
                         </div>
@@ -90,7 +90,7 @@ const ContactForm = ({ isDark }) => {
                                     pattern: { value: /\S+@\S+\.\S+/, message: "That doesn't look like a valid email" }
                                 })}
                                 className={`${inputClasses} ${errors.email ? 'border-red-500/50' : ''}`}
-                                placeholder="wizard@hogwartz.com"
+                                placeholder={isDark ? "wizard@hogwartz.com" : "contact@example.com"}
                             />
                             {errors.email && <span className="text-red-500 text-xs mt-2 block font-medium">{errors.email.message}</span>}
                         </div>
@@ -113,7 +113,7 @@ const ContactForm = ({ isDark }) => {
                         <textarea
                             id="message"
                             rows={5}
-                            {...register('message', { required: "What's the magic request?" })}
+                            {...register('message', { required: isDark ? "What's the magic request?" : "How can we help you?" })}
                             className={`${inputClasses} resize-none ${errors.message ? 'border-red-500/50' : ''}`}
                             placeholder="Tell us about your next project or big idea..."
                         />

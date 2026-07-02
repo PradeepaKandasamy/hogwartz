@@ -144,17 +144,24 @@ const SkillsExpertise = ({ isDark }) => {
                             viewport={{ once: false }}
                             className="inline-flex items-center gap-2 text-accent uppercase font-body font-bold text-xs md:text-sm tracking-widest"
                         >
-                             <Wand2 className="w-4 h-4" /> Mastery Levels
+                             <Wand2 className="w-4 h-4" /> {isDark ? 'Mastery Levels' : 'Expertise Levels'}
                         </motion.div>
                         
                          <h2 className={`text-4xl md:text-5xl lg:text-6xl font-magical font-bold leading-[1.1] ${isDark ? 'text-white' : 'text-primary'}`}>
-                            The Strength of Our <br /> <span className="text-accent underline decoration-accent/10 underline-offset-[14px]">Combined Magic</span>.
+                            {isDark ? (
+                                <>The Strength of Our <br /> <span className="text-accent underline decoration-accent/10 underline-offset-[14px]">Combined Magic</span>.</>
+                            ) : (
+                                <>The Strength of Our <br /> <span className="text-accent underline decoration-accent/10 underline-offset-[14px]">Combined Expertise</span>.</>
+                            )}
                         </h2>
                         
                         <p className={`font-body text-base md:text-lg leading-relaxed max-w-xl 
                             ${isDark ? 'text-text-secondary' : 'text-text-secondary font-medium'}
                         `}>
-                            Every member of our council possesses a unique alignment of skills, sharpened through rigorous technical combat and deep market intuition. We don't just hold knowledge—we possess mastery over the digital elementals. 
+                            {isDark
+                                ? "Every member of our council possesses a unique alignment of skills, sharpened through rigorous technical combat and deep market intuition. We don't just hold knowledge—we possess mastery over the digital elementals."
+                                : "Our team possesses a unique blend of skills, sharpened through extensive experience and deep market intuition. We don't just hold knowledge—we possess mastery over modern digital technologies."
+                            }
                         </p>
                         
                         <div className="grid grid-cols-2 gap-8 pt-8">

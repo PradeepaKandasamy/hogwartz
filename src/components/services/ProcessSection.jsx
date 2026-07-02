@@ -12,8 +12,10 @@ const ProcessStep = ({ step, index, isDark }) => {
             <div className="md:w-1/2 flex justify-center">
                 <div className={`w-32 h-32 rounded-full flex items-center justify-center relative ${isDark ? 'bg-accent/10 text-accent' : 'bg-primary/5 text-primary'}`}>
                     <div className="absolute inset-0 rounded-full border border-dashed border-current animate-[spin_20s_linear_infinite]"></div>
-                    <span className="text-4xl font-magical">{step.number}</span>
-                    {step.icon}
+                    {/* Number removed as per request, keeping only the icon */}
+                    <div className="scale-150">
+                        {step.icon}
+                    </div>
                 </div>
             </div>
             <div className="md:w-1/2 text-center md:text-left">
@@ -42,8 +44,12 @@ const ProcessSection = ({ isDark, content }) => {
             <section className="py-32 px-6 overflow-hidden">
                 <div className="container mx-auto max-w-6xl">
                     <div className="text-center mb-20">
-                          <h2 className="font-magical text-4xl md:text-5xl lg:text-6xl mb-6 text-text-primary text-center leading-tight">Digital Manifestations</h2>
-                         <p className="font-body text-lg md:text-xl text-text-secondary text-center">Witness the convergence of logic and magic.</p>
+                          <h2 className={`text-4xl md:text-5xl lg:text-6xl mb-6 text-text-primary text-center leading-tight ${isDark ? 'font-magical' : 'font-heading font-extrabold'}`}>
+                              {isDark ? 'Digital Manifestations' : 'Our Proven Process'}
+                          </h2>
+                         <p className="font-body text-lg md:text-xl text-text-secondary text-center">
+                             {isDark ? 'Witness the convergence of logic and magic.' : 'See how we turn strategy into measurable results.'}
+                         </p>
                     </div>
 
                     <div className={`p-12 md:p-20 rounded-[4rem] border relative ${isDark ? 'bg-primary border-accent/20' : 'bg-white shadow-2xl border-primary/5'}`}>
@@ -58,8 +64,12 @@ const ProcessSection = ({ isDark, content }) => {
                                 <div className="mb-6 flex justify-center text-accent">
                                     <Search className="w-12 h-12" />
                                 </div>
-                                <h4 className="font-magical text-xl mb-2">The Raw Idea</h4>
-                                <p className="text-sm text-text-secondary italic">Untapped Potential</p>
+                                <h4 className={`text-xl mb-2 ${isDark ? 'font-magical' : 'font-heading font-bold'}`}>
+                                    {isDark ? 'The Raw Idea' : 'Discovery'}
+                                </h4>
+                                <p className="text-sm text-text-secondary italic">
+                                    {isDark ? 'Untapped Potential' : 'Initial Strategy'}
+                                </p>
                             </motion.div>
 
                             {/* The Center Forge (Animated) */}
@@ -94,14 +104,18 @@ const ProcessSection = ({ isDark, content }) => {
                                 <div className="mb-6 flex justify-center text-highlight">
                                     <Gauge className="w-12 h-12" />
                                 </div>
-                                <h4 className="font-magical text-xl mb-2">Market Legend</h4>
-                                <p className={`text-sm italic ${isDark ? 'text-accent' : 'text-highlight'}`}>Measurable Dominance</p>
+                                <h4 className={`text-xl mb-2 ${isDark ? 'font-magical' : 'font-heading font-extrabold text-accent'}`}>
+                                    {isDark ? 'Market Legend' : 'Market Impact'}
+                                </h4>
+                                <p className={`text-sm italic ${isDark ? 'text-accent' : 'text-white/80'}`}>
+                                    {isDark ? 'Measurable Dominance' : 'Measurable Growth'}
+                                </p>
                             </motion.div>
                         </div>
 
                         {/* Workflow steps */}
                         <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                            {["Audience Sync", "Asset Forging", "Spell Deployment", "Insight Extraction"].map((step, i) => (
+                            {(isDark ? ["Audience Sync", "Asset Forging", "Spell Deployment", "Insight Extraction"] : ["Research", "Development", "Launch", "Analytics"]).map((step, i) => (
                                 <motion.div
                                     key={i}
                                     initial={{ opacity: 0, y: 10 }}

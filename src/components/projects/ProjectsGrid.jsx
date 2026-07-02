@@ -137,8 +137,10 @@ const ProjectsGrid = ({
                                         
                                         <div className="flex items-end justify-between gap-4">
                                              <div className="space-y-1">
-                                                 <p className="text-[10px] font-body font-bold text-accent uppercase tracking-[0.3em]">{project.category}</p>
-                                                <h3 className={`text-2xl md:text-3xl font-heading font-bold leading-tight ${isDark ? 'text-white' : 'text-primary'}`}>
+                                                 <p className={`text-[10px] md:text-[11px] font-body font-extrabold uppercase tracking-[0.3em] drop-shadow-sm ${isDark ? 'text-accent' : 'text-primary'}`}>
+                                                     {project.category}
+                                                 </p>
+                                                <h3 className={`text-xl md:text-2xl font-heading font-bold leading-tight ${isDark ? 'text-white' : 'text-primary'}`}>
                                                     {project.title}
                                                 </h3>
                                             </div>
@@ -181,13 +183,13 @@ const ProjectsGrid = ({
                                 className="absolute inset-0 bg-accent/20 rounded-full" 
                             />
                         </div>
-                        <h3 className="text-4xl font-heading font-bold text-text-primary mb-4">The Chamber is Empty</h3>
-                        <p className="text-xl text-text-muted max-w-md mx-auto">None of these specific spells have been archived yet. Shall we cast the first one together?</p>
+                        <h3 className="text-4xl font-heading font-bold text-text-primary mb-4">{isDark ? 'The Chamber is Empty' : 'No Projects Found'}</h3>
+                        <p className="text-xl text-text-muted max-w-md mx-auto">{isDark ? 'None of these specific spells have been archived yet. Shall we cast the first one together?' : 'We haven\'t uploaded projects in this category yet. Want to be our first?'}</p>
                         <button 
                             onClick={() => setActiveFilter('All')}
                             className="mt-12 px-8 py-4 rounded-full border border-accent text-accent font-bold hover:bg-accent hover:text-primary transition-all shadow-[0_0_20px_rgba(201,168,76,0.1)]"
                         >
-                            Reopen the Full Archives
+                            {isDark ? 'Reopen the Full Archives' : 'View All Projects'}
                         </button>
                     </motion.div>
                 )}

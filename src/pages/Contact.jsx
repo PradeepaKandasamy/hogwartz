@@ -5,13 +5,13 @@ import ContactInfo from '../components/contact/ContactInfo';
 import ContactForm from '../components/contact/ContactForm';
 import QuickContact from '../components/contact/QuickContact';
 import ContactFAQ from '../components/contact/ContactFAQ';
-import ContactCTA from '../components/contact/ContactCTA';
+import ContactBanner from '../components/home/ContactBanner';
 
 const Contact = () => {
     const { theme } = useTheme();
     const isDark = theme === 'dark-arts';
 
-    const faqs = [
+    const faqs = isDark ? [
         {
             question: "How long does a website take to build?",
             answer: "A standard spell (website) takes about 4-6 weeks to conjure, while complex custom platforms might take 2-3 months from initial scrying to final deployment."
@@ -28,13 +28,30 @@ const Contact = () => {
             question: "Can we meet in person as well?",
             answer: "While we operate primarily through the digital Floo Network, we're happy to schedule physical Raven meetings if you're in our sanctuary's territory."
         }
+    ] : [
+        {
+            question: "How long does a website take to build?",
+            answer: "A standard website takes about 4-6 weeks to build, while complex custom platforms might take 2-3 months from initial planning to final deployment."
+        },
+        {
+            question: "Do you offer ongoing marketing support?",
+            answer: "Absolutely. We offer retainer packages for continuous digital marketing, including SEO, Ads management, and content creation to keep your brand growing."
+        },
+        {
+            question: "What is your pricing structure?",
+            answer: "Every project is unique. Depending on the complexity of the services required, we provide custom quotes after our initial consultation. No hidden fees."
+        },
+        {
+            question: "Can we meet in person as well?",
+            answer: "While we operate primarily remotely, we're happy to schedule in-person meetings if you're located near our headquarters."
+        }
     ];
 
     return (
         <div className={`overflow-x-hidden ${isDark ? 'theme-dark-arts' : 'theme-enchanted'} bg-background transition-colors duration-500`}>
             <Helmet>
                 <title>Contact Us | Hogwartz Digital</title>
-                <meta name="description" content="Send us an owl. Contact Hogwartz Digital to discuss your next big web development or marketing project." />
+                <meta name="description" content={isDark ? "Send us an owl. Contact Hogwartz Digital to discuss your next big web development or marketing project." : "Contact Hogwartz Digital to discuss your next big web development or marketing project."} />
             </Helmet>
 
             {/* 1. Hero Section */}
@@ -68,7 +85,7 @@ const Contact = () => {
             <ContactFAQ isDark={isDark} faqs={faqs} />
 
             {/* 4. CTA Section */}
-            <ContactCTA isDark={isDark} />
+            <ContactBanner />
         </div>
     );
 };

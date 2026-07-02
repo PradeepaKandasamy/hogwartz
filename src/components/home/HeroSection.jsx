@@ -98,12 +98,12 @@ const HeroSection = () => {
                             </motion.div>
 
                             <motion.h1 variants={headlineVariants} className="font-heading font-extrabold text-4xl md:text-5xl lg:text-7xl tracking-tight leading-[1.1] text-[#1E293B]">
-                                Where Creativity <br className="hidden sm:block" />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A84C] to-highlight">Meets Growth</span>
+                                Building Digital Experiences That Drive <br className="hidden sm:block" />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A84C] to-highlight">Business Growth</span>
                             </motion.h1>
 
                             <motion.p variants={subtitleVariants} className="text-lg md:text-xl max-w-2xl font-medium leading-relaxed text-text-secondary">
-                                We help businesses grow through strategic marketing, modern technology, and creative digital experiences. From websites to branding and performance marketing, we transform ideas into measurable growth.
+                                At Hogwartz Digital, we help businesses establish a powerful online presence through strategic marketing, high-performance websites, creative branding, and data-driven digital solutions. Our goal is to transform ideas into measurable business growth.
                             </motion.p>
 
                             <motion.div variants={buttonVariants} className="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto justify-center lg:justify-start">
@@ -111,7 +111,7 @@ const HeroSection = () => {
                                     to="/contact"
                                     className="font-body px-10 py-5 rounded-xl font-bold tracking-wide transition-all duration-300 flex items-center justify-center gap-2 group shadow-xl bg-gradient-to-br from-accent to-highlight text-primary hover:scale-105 hover:shadow-accent/40"
                                 >
-                                    <span>Start Your Journey</span>
+                                    <span>Start Your Project</span>
                                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </NavLink>
 
@@ -120,7 +120,7 @@ const HeroSection = () => {
                                     className="font-body px-10 py-5 rounded-xl font-bold tracking-wide transition-all duration-300 flex items-center justify-center gap-2 group border-2 border-primary/10 text-primary bg-white/50 backdrop-blur-sm hover:bg-white/80 hover:border-primary/20"
                                 >
                                     <Play className="w-4 h-4 text-accent group-hover:text-highlight transition-colors" />
-                                    <span>See Our Work</span>
+                                    <span>Explore Our Work</span>
                                 </NavLink>
                             </motion.div>
 
@@ -133,7 +133,7 @@ const HeroSection = () => {
                                     ))}
                                 </div>
                                 <div className="text-left">
-                                    <p className="text-sm font-bold text-primary max-w-[200px] leading-tight">Helping local businesses build a stronger digital future since 2025.</p>
+                                    <p className="text-sm font-bold text-primary max-w-[200px] leading-tight">Trusted by growing businesses to build a stronger digital future since 2025.</p>
                                     <div className="flex gap-1 mt-1">
                                         {[...Array(5)].map((_, i) => <SparklesIcon key={i} className="w-3 h-3 text-accent fill-accent" />)}
                                     </div>
@@ -208,7 +208,7 @@ const HeroSection = () => {
                                     <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-accent flex items-center justify-center group-hover:rotate-12 transition-transform">
                                         <Play className="w-3 h-3 sm:w-4 sm:h-4 text-primary fill-current" />
                                     </div>
-                                    <p className="text-[10px] sm:text-xs font-bold text-white whitespace-nowrap">Magic Demo</p>
+                                    <p className="text-[10px] sm:text-xs font-bold text-white whitespace-nowrap">Live Preview</p>
                                 </motion.div>
                             </motion.div>
                         </div>

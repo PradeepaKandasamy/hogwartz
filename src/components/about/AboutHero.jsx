@@ -28,7 +28,7 @@ const AboutHero = ({ isDark, content }) => {
     }, [mouseX, mouseY]);
 
     return (
-        <section className={`relative min-h-[110vh] flex items-center py-40 px-6 overflow-visible transition-colors duration-1000
+        <section className={`relative min-h-[90vh] lg:min-h-screen flex items-center py-20 px-6 overflow-visible transition-colors duration-1000
             ${!isDark ? 'bg-gradient-to-br from-[#F8FAFC] to-[#EEF2F7]' : 'bg-transparent'}
         `}>
             {/* --- CUSTOM MAGICAL CURSOR (Premium Lerp) --- */}
@@ -81,16 +81,16 @@ const AboutHero = ({ isDark, content }) => {
                         >
                             <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-primary/10 bg-white/80 text-primary shadow-sm backdrop-blur-md">
                                 <Sparkles className="w-4 h-4 text-accent animate-pulse" />
-                                <span className="font-heading text-xs font-bold tracking-widest uppercase">The Origin Story</span>
+                                <span className="font-heading text-xs font-bold tracking-widest uppercase">ABOUT HOGWARTZ DIGITAL</span>
                             </div>
 
-                            <h1 className="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl text-[#1E293B] leading-[1.15] tracking-tight">
-                                We Didn’t Just Build a Brand... <br />
-                                <span className="text-[#C9A84C] italic font-heading">We Created a Digital Spellbook</span>
+                            <h1 className="font-heading font-extrabold text-4xl md:text-5xl lg:text-7xl text-[#1E293B] leading-[1.1] tracking-tight">
+                                Your Trusted Partner for <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A84C] to-highlight">Digital Growth</span>
                             </h1>
 
-                            <p className="font-body text-lg md:text-xl text-text-muted leading-relaxed font-medium max-w-xl">
-                                From a simple idea to a powerful digital force — <span className="text-primary font-bold">Hogwartz</span> was crafted to turn imagination into measurable impact. We bridge the gap between human storytelling and machine-level precision.
+                            <p className="font-body text-lg md:text-xl text-text-secondary leading-relaxed font-medium max-w-xl">
+                                Founded on 20 October 2025, <span className="text-primary font-bold">Hogwartz Digital</span> was established with a clear purpose—to help businesses succeed in today's digital-first world.
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center gap-6 pt-4">
@@ -106,7 +106,7 @@ const AboutHero = ({ isDark, content }) => {
                                     className="group px-10 py-5 rounded-2xl border-2 border-primary/10 bg-white font-bold tracking-wide transition-all duration-500 hover:bg-slate-50 flex items-center gap-2"
                                 >
                                     <Sparkles className="w-5 h-5 text-accent" />
-                                    <span>Meet the Wizards</span>
+                                    <span>Meet the Team</span>
                                 </NavLink>
                             </div>
                         </motion.div>
@@ -186,7 +186,7 @@ const AboutHero = ({ isDark, content }) => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ ...transitionConfig, delay: 0.4 }}
-                                className="font-magical font-bold text-4xl md:text-5xl lg:text-6xl mb-8 leading-[1.2] text-white drop-shadow-[0_0_25px_rgba(201,168,76,0.2)]"
+                                className="font-magical font-bold text-4xl md:text-5xl lg:text-7xl mb-8 leading-[1.1] text-white drop-shadow-[0_0_25px_rgba(201,168,76,0.2)]"
                             >
                                 {content.hero.title}
                             </motion.h1>

@@ -35,11 +35,17 @@ const ContactBanner = () => {
                         </div>
 
                         <h2 className="font-magical text-4xl md:text-5xl lg:text-6xl text-text-primary font-bold mb-6">
-                            Ready to Grow Your <span className="text-accent underline underline-offset-8">Business Digitally?</span>
+                            {theme === 'enchanted-scroll' ? (
+                                <>Ready to Elevate Your <span className="text-accent underline underline-offset-8">Business Online?</span></>
+                            ) : (
+                                <>Ready to Grow Your <span className="text-accent underline underline-offset-8">Business Digitally?</span></>
+                            )}
                         </h2>
 
                         <p className="font-body text-lg text-text-secondary max-w-2xl mb-10">
-                            Partner with Hogwartz Digital and transform your ideas into impactful digital experiences.
+                            {theme === 'enchanted-scroll'
+                                ? "Partner with Hogwartz Digital to create impactful digital experiences that drive growth, strengthen your brand, and deliver measurable results."
+                                : "Partner with Hogwartz Digital and transform your ideas into impactful digital experiences."}
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-5 items-center justify-center">

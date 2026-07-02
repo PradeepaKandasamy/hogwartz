@@ -28,7 +28,7 @@ const TeamHero = ({ isDark }) => {
     });
 
     return (
-        <section className={`relative min-h-[90vh] flex items-center py-20 px-6 overflow-hidden transition-colors duration-500
+        <section className={`relative min-h-[90vh] lg:min-h-screen flex items-center py-20 px-6 overflow-hidden transition-colors duration-500
             ${!isDark ? 'bg-gradient-to-br from-[#F8FAFC] to-[#EEF2F7]' : 'bg-[#05050A]'}
         `}>
             {/* Background elements */}
@@ -82,14 +82,13 @@ const TeamHero = ({ isDark }) => {
                         >
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/10 bg-white shadow-lg shadow-primary/5">
                                 <Users className="w-4 h-4 text-accent" />
-                                <span className="font-heading text-xs font-bold tracking-widest uppercase text-primary">THE PEOPLE BEHIND THE MAGIC</span>
+                                <span className="font-heading text-xs font-bold tracking-widest uppercase text-primary">OUR TEAM</span>
                             </div>
 
                             <h1 className="font-heading font-extrabold text-4xl md:text-5xl lg:text-7xl text-[#1E293B] leading-[1.1] tracking-tight">
-                                Meet the Minds <br />
-                                Behind <br />
+                                Meet the People Driving <br />
                                 <span className="relative inline-block">
-                                    <span className="text-accent italic">Growth</span>
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A84C] to-highlight">Digital Success</span>
                                     <motion.div 
                                         animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
                                         transition={{ duration: 3, repeat: Infinity }}
@@ -101,8 +100,8 @@ const TeamHero = ({ isDark }) => {
                             </h1>
 
                             <div className="space-y-4">
-                                <p className="font-body text-lg md:text-xl text-text-muted leading-relaxed max-w-xl font-medium">
-                                    A team of creators, strategists, developers, and designers working together to build meaningful digital experiences for modern businesses.
+                                <p className="font-body text-lg md:text-xl text-text-secondary leading-relaxed max-w-xl font-medium">
+                                    Behind every successful project is a passionate team of strategists, designers, developers, and creators dedicated to delivering innovative digital solutions that help businesses grow.
                                 </p>
                                 
                                 {/* Dynamic Expertise Highlight */}
@@ -235,7 +234,7 @@ const TeamHero = ({ isDark }) => {
                                  </span>
                              </motion.div>
                             
-                            <h1 className="text-4xl md:text-6xl lg:text-7xl font-magical font-bold leading-[1.2] mb-8 tracking-tight text-white">
+                            <h1 className="font-magical font-bold text-4xl md:text-5xl lg:text-7xl mb-8 leading-[1.1] text-white tracking-tight">
                                 Meet the Minds Behind <br /><span className="text-accent underline decoration-accent/20 underline-offset-[12px]">Growth</span>
                             </h1>
                             

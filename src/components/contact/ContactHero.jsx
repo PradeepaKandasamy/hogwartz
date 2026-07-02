@@ -30,7 +30,7 @@ const ContactHero = ({ isDark }) => {
     });
 
     return (
-        <section className={`relative min-h-[85vh] flex items-center pt-32 pb-20 px-6 overflow-hidden transition-colors duration-500
+        <section className={`relative min-h-[90vh] lg:min-h-screen flex items-center py-20 px-6 overflow-hidden transition-colors duration-500
             ${!isDark ? 'bg-gradient-to-br from-[#F8FAFC] to-[#EEF2F7]' : 'bg-[#05050A]'}
         `}>
             {/* Background elements */}
@@ -64,17 +64,17 @@ const ContactHero = ({ isDark }) => {
                                 <span className="font-heading text-xs font-bold tracking-widest uppercase text-primary">START A PROJECT</span>
                             </div>
 
-                            <h1 className="font-heading font-extrabold text-4xl md:text-5xl lg:text-7xl text-[#1E293B] leading-[1.1]">
+                            <h1 className="font-heading font-extrabold text-4xl md:text-5xl lg:text-7xl text-[#1E293B] leading-[1.1] tracking-tight">
                                 Let's Build <br />
                                 Something Incredible <br />
-                                <span className="text-accent italic relative">
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A84C] to-highlight relative">
                                     Together
                                     <Sparkles className="absolute -top-6 -right-8 w-10 h-10 text-accent/20" />
                                 </span>
                             </h1>
 
                             <div className="space-y-4">
-                                <p className="font-body text-lg md:text-xl text-text-muted leading-relaxed max-w-xl font-medium">
+                                <p className="font-body text-lg md:text-xl text-text-secondary leading-relaxed max-w-xl font-medium">
                                     Whether you're launching a new brand, growing your online presence, or building your next website, we're here to help turn your vision into reality.
                                 </p>
                                 
@@ -189,7 +189,7 @@ const ContactHero = ({ isDark }) => {
                                  START A PROJECT
                             </motion.span>
                             
-                            <h1 className="hero-title font-bold mb-8 text-white">
+                            <h1 className="font-magical font-bold text-4xl md:text-5xl lg:text-7xl mb-8 leading-[1.1] text-white drop-shadow-[0_0_25px_rgba(201,168,76,0.2)]">
                                 <span className="block">
                                     Let's Build Something <br /><span className="text-accent italic">Incredible Together</span>
                                 </span>

@@ -66,13 +66,13 @@ const TeamQuotes = ({ isDark }) => {
     const quotes = [
         {
             quote: isDark ? "We don’t just build websites — we craft digital experiences that manifest legendary narratives." : "Total digital transformations require absolute precision and unyielding creative passion.",
-            author: "Alaric Vanguard",
-            role: isDark ? "High Alchemist" : "Founder"
+            author: isDark ? "Alaric Vanguard" : "Ramasubramaniyan",
+            role: isDark ? "High Alchemist" : "Founder & CEO"
         },
         {
-            quote: isDark ? "Every line of code is an incantation, designed to bring structure to the chaotic void of the web." : "Scalability is the foundation of digital success; we build architectures that never yield.",
-            author: "Elara Codecraft",
-            role: isDark ? "Warden of the Lattice" : "Lead Engineer"
+            quote: isDark ? "Every line of code is an incantation, designed to bring structure to the chaotic void of the web." : "Scalability is the foundation of digital success; we build architectures that drive sustainable growth.",
+            author: isDark ? "Elara Codecraft" : "Pradeepa",
+            role: isDark ? "Warden of the Lattice" : "Developer & Editor"
         }
     ];
 

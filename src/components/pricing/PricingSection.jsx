@@ -127,6 +127,7 @@ const PricingSection = ({ isDark }) => {
                 </div>
 
                 {/* SaaS Premium Billing Toggle */}
+                {activeCategory !== 'Web Development' && (
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -176,6 +177,7 @@ const PricingSection = ({ isDark }) => {
                         </div>
                     </div>
                 </motion.div>
+                )}
 
                 {/* Service Category Selector (Segmented Tabs) */}
                 <motion.div
@@ -218,7 +220,8 @@ const PricingSection = ({ isDark }) => {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     <AnimatePresence mode="wait">
                         {activePlans.map((plan, index) => {
-                            const isYearly = billingCycle === 'yearly';
+                            const isWebDev = activeCategory === 'Web Development';
+                            const isYearly = !isWebDev && billingCycle === 'yearly';
                             const price = isYearly ? Math.round(plan.monthlyPrice * 0.8) : plan.monthlyPrice;
                             
                             return (
@@ -267,11 +270,13 @@ const PricingSection = ({ isDark }) => {
                                         `}>
                                             ₹{price.toLocaleString('en-IN')}
                                         </span>
-                                        <span className={`text-base font-body font-medium
-                                            ${isDark ? 'text-text-secondary' : 'text-text-muted'}
-                                        `}>
-                                            /mo
-                                        </span>
+                                        {!isWebDev && (
+                                            <span className={`text-base font-body font-medium
+                                                ${isDark ? 'text-text-secondary' : 'text-text-muted'}
+                                            `}>
+                                                /mo
+                                            </span>
+                                        )}
                                     </div>
                                     
                                     {/* Yearly Billed Indicator */}

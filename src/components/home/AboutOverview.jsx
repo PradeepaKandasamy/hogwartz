@@ -76,7 +76,7 @@ const AboutOverview = () => {
                                         </defs>
                                         <text className="text-[8px] font-bold uppercase tracking-[0.2em] fill-primary">
                                             <textPath xlinkHref="#circlePath">
-                                                Digital Magic • Creative Growth • Hogwartz • 
+                                                Digital Strategy • Creative Growth • Hogwartz • 
                                             </textPath>
                                         </text>
                                     </svg>

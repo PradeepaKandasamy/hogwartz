@@ -25,8 +25,12 @@ const ToolsTech = ({ isDark }) => {
                         }}
                         className="space-y-8"
                     >
-                        <span className="text-accent font-bold font-body uppercase tracking-[0.2em] text-xs md:text-sm block">Wand-Grade Infrastructure</span>
-                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-magical font-bold leading-[1.1]">Our Magical Stack & Core Alchemies.</h2>
+                        <span className="text-accent font-bold font-body uppercase tracking-[0.2em] text-xs md:text-sm block">
+                            {isDark ? 'Wand-Grade Infrastructure' : 'Enterprise Infrastructure'}
+                        </span>
+                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-magical font-bold leading-[1.1]">
+                            {isDark ? 'Our Magical Stack & Core Alchemies.' : 'Our Modern Technology Stack.'}
+                         </h2>
                         <p className="font-body text-base md:text-lg text-text-muted leading-relaxed max-w-xl">
                             We utilize only the most powerful digital components to ensure your project doesn't just look stunning, but functions with absolute reliability and speed.
                         </p>
@@ -34,7 +38,9 @@ const ToolsTech = ({ isDark }) => {
                         <div className="grid grid-cols-2 gap-8 pt-8">
                             <div className="space-y-px">
                                 <p className="text-4xl md:text-5xl font-heading font-bold text-accent">100%</p>
-                                <p className="text-[10px] md:text-xs uppercase font-body font-bold tracking-widest text-text-muted">Magic Accuracy</p>
+                                <p className="text-[10px] md:text-xs uppercase font-body font-bold tracking-widest text-text-muted">
+                                    {isDark ? 'Magic Accuracy' : 'Pixel Accuracy'}
+                                </p>
                             </div>
                             <div className="space-y-px">
                                 <p className="text-4xl md:text-5xl font-heading font-bold text-accent">60fps</p>
@@ -45,10 +51,10 @@ const ToolsTech = ({ isDark }) => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {[
-                            { name: 'React Architecture', icon: <Code className="w-8 h-8" />, desc: 'Modern structures for complex magical systems.' },
-                            { name: 'Motion Wizardry', icon: <Activity className="w-8 h-8"/>, desc: 'Immersive animations with zero performance lag.' },
-                            { name: 'Cloud Alchemy', icon: <Globe className="w-8 h-8"/>, desc: 'Global delivery via enchanted distribution networks.' },
-                            { name: 'Lead Generation', icon: <TrendingUp className="w-8 h-8"/>, desc: 'Converting casual observers into loyal disciples.' },
+                            { name: 'React Architecture', icon: <Code className="w-8 h-8" />, desc: isDark ? 'Modern structures for complex magical systems.' : 'Modern structures for robust web applications.' },
+                            { name: isDark ? 'Motion Wizardry' : 'Fluid Animations', icon: <Activity className="w-8 h-8"/>, desc: 'Immersive animations with zero performance lag.' },
+                            { name: isDark ? 'Cloud Alchemy' : 'Cloud Infrastructure', icon: <Globe className="w-8 h-8"/>, desc: isDark ? 'Global delivery via enchanted distribution networks.' : 'Global delivery via scalable distribution networks.' },
+                            { name: 'Lead Generation', icon: <TrendingUp className="w-8 h-8"/>, desc: isDark ? 'Converting casual observers into loyal disciples.' : 'Converting casual visitors into loyal customers.' },
                         ].map((tool, i) => (
                             <motion.div 
                                 key={i}

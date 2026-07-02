@@ -6,7 +6,7 @@ const QuickContact = ({ isDark }) => {
         {
             icon: <MessageCircle className="w-8 h-8" />,
             title: isDark ? "WhatsApp Spell" : "WhatsApp Chat",
-            desc: "Chat with us instantly for quick magical support.",
+            desc: isDark ? "Chat with us instantly for quick magical support." : "Chat with us instantly for quick support.",
             link: "https://wa.me/15551234567",
             color: "text-green-500",
             glow: "shadow-green-500/20"
@@ -14,7 +14,7 @@ const QuickContact = ({ isDark }) => {
         {
             icon: <PhoneCall className="w-8 h-8" />,
             title: isDark ? "Floo Call" : "Direct Call",
-            desc: "Speak directly with our team of digital wizards.",
+            desc: isDark ? "Speak directly with our team of digital wizards." : "Speak directly with our team of digital experts.",
             link: "tel:+15551234567",
             color: "text-blue-500",
             glow: "shadow-blue-500/20"
@@ -22,7 +22,7 @@ const QuickContact = ({ isDark }) => {
         {
             icon: <Mail className="w-8 h-8" />,
             title: isDark ? "Owl Mail" : "Quick Email",
-            desc: "Send us your queries anytime via electronic owl.",
+            desc: isDark ? "Send us your queries anytime via electronic owl." : "Send us your queries anytime via email.",
             link: "mailto:hello@hogwartzdigital.com",
             color: "text-red-500",
             glow: "shadow-red-500/20"

@@ -92,17 +92,17 @@ const ProjectsHero = ({ isDark }) => {
                         >
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/10 bg-white shadow-sm">
                                 <Sparkles className="w-4 h-4 text-accent" />
-                                <span className="font-heading text-xs font-bold tracking-widest uppercase text-primary">OUR WORK</span>
+                                <span className="font-heading text-xs font-bold tracking-widest uppercase text-primary">OUR PORTFOLIO</span>
                             </div>
 
                             <h1 className="font-heading font-extrabold text-4xl md:text-5xl lg:text-7xl text-[#1E293B] leading-[1.1]">
-                                Where Ideas <br />
-                                Transform Into <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-highlight">Digital Success</span>
+                                Turning Ideas Into <br />
+                                Successful <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-highlight">Digital Experiences</span>
                             </h1>
 
                             <p className="font-body text-lg md:text-xl text-text-muted leading-relaxed max-w-xl font-medium">
-                                Every project we undertake is built with strategy, creativity, and measurable outcomes. Explore how we help businesses strengthen their digital presence and achieve growth.
+                                Every project reflects our commitment to quality, innovation, and measurable business outcomes. Discover how we've helped businesses strengthen their digital presence through tailored digital solutions.
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center gap-5 pt-4">

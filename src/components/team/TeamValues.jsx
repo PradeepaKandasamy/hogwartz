@@ -77,7 +77,7 @@ const TeamValues = ({ isDark }) => {
                 <div className="text-center mb-24 max-w-3xl mx-auto space-y-6">
                     <span className="text-accent font-bold font-body uppercase tracking-[0.2em] text-xs md:text-sm block">Building on Foundations</span>
                     <h2 className={`text-4xl md:text-5xl lg:text-6xl font-magical font-bold leading-[1.1] ${isDark ? 'text-white' : 'text-primary'}`}>
-                        Our Magical <br /> Core Foundations.
+                        {isDark ? <>Our Magical <br /> Core Foundations.</> : <>Our Core <br /> Business Foundations.</>}
                     </h2>
                 </div>
 

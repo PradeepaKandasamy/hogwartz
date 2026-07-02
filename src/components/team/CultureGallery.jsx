@@ -25,7 +25,7 @@ const CultureGallery = ({ isDark }) => {
                             viewport={{ once: false }}
                             className="text-accent font-bold font-body uppercase tracking-[0.2em] text-xs md:text-sm flex items-center gap-2"
                         >
-                            <div className="w-8 h-px bg-accent" /> Digital Sanctuary
+                            <div className="w-8 h-px bg-accent" /> {isDark ? 'Digital Sanctuary' : 'Our Workspace'}
                         </motion.span>
                         <motion.h2 
                             initial={{ opacity: 0, y: 30 }}
@@ -34,7 +34,11 @@ const CultureGallery = ({ isDark }) => {
                             transition={{ delay: 0.1 }}
                             className={`text-4xl md:text-5xl lg:text-6xl font-magical font-bold leading-[1.1] ${isDark ? 'text-white' : 'text-primary'}`}
                         >
-                            Behind the <br /><span className="text-accent">Spells & Screens.</span>
+                            {isDark ? (
+                                <>Behind the <br /><span className="text-accent">Spells & Screens.</span></>
+                            ) : (
+                                <>Behind the <br /><span className="text-accent">Creative Process.</span></>
+                            )}
                         </motion.h2>
                     </div>
                     
@@ -45,7 +49,10 @@ const CultureGallery = ({ isDark }) => {
                         transition={{ delay: 0.2 }}
                         className={`text-lg md:text-xl font-body max-w-md ${isDark ? 'text-text-secondary' : 'text-text-secondary font-medium'}`}
                     >
-                        Our creative environment is the vessel where magic manifestations occur daily. Witness the focused action of the coven.
+                        {isDark
+                            ? "Our creative environment is the vessel where magic manifestations occur daily. Witness the focused action of the coven."
+                            : "Our creative environment is where innovation happens daily. Witness the focused action of our team."
+                        }
                     </motion.p>
                 </div>
 

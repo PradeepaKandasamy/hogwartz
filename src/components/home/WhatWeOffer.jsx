@@ -116,7 +116,38 @@ const WhatWeOffer = () => {
     const timerRef = useRef(null);
     
     // Services setup
-    const baseServices = useMemo(() => [
+    const baseServices = useMemo(() => isLight ? [
+        {
+            title: 'Website Development',
+            description: 'Custom, high-performance websites and web applications built with speed and precision.',
+            image: 'https://picsum.photos/seed/webdev/300/200',
+            stats: { power: 'Ultra'}
+        },
+        {
+            title: 'Digital Marketing',
+            description: 'Strategic campaigns for growth. We construct targeted campaigns that attract and convert your ideal audience.',
+            image: 'https://picsum.photos/seed/marketing/300/200',
+            stats: { power: 'High'}
+        },
+        {
+            title: 'Ad Campaigns',
+            description: 'Targeted advertisements that reach your audience with precision and maximize ROI.',
+            image: 'https://picsum.photos/seed/ads/300/200',
+            stats: { power: 'High' }
+        },
+        {
+            title: 'Video Production',
+            description: 'Cinematic video content tailored for social media, YouTube, and corporate storytelling.',
+            image: 'https://picsum.photos/seed/video/300/200',
+            stats: { power: 'High' }
+        },
+        {
+            title: 'Graphic Design',
+            description: 'Breathtaking visuals. From event posters to complete brand identities and user interface design.',
+            image: 'https://picsum.photos/seed/design/300/200',
+            stats: { power: 'Mega' }
+        }
+    ] : [
         {
             title: 'Website Development',
             description: 'Enchanting, high-performance websites and web applications built with magical speed and precision.',
@@ -147,7 +178,7 @@ const WhatWeOffer = () => {
             image: 'https://picsum.photos/seed/design/300/200',
             stats: { power: 'Mega' }
         }
-    ], []);
+    ], [isLight]);
 
     // Width of 1 card + gap
     const cardWidth = 350; // 320 + 30 gap

@@ -80,7 +80,7 @@ const ContactInfo = ({ isDark }) => {
                                 }`}>
                                     {method.title}
                                 </h4>
-                                <p className={`font-body text-base font-medium transition-opacity ${
+                                <p className={`font-body text-base font-medium transition-opacity break-all md:break-normal ${
                                     isDark ? 'text-text-primary/80 group-hover:text-text-primary' : 'text-text-secondary group-hover:text-text-primary'
                                 }`}>
                                     {method.value}
