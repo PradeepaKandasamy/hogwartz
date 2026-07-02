@@ -59,9 +59,9 @@ const ContactHero = ({ isDark }) => {
                             transition={{ duration: 0.8 }}
                             className="space-y-8"
                         >
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/10 bg-white shadow-sm">
-                                <MessageCircle className="w-4 h-4 text-accent" />
-                                <span className="font-heading text-xs font-bold tracking-widest uppercase text-primary">START A PROJECT</span>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/10 bg-white shadow-sm shrink-0">
+                                <MessageCircle className="w-4 h-4 text-accent shrink-0" />
+                                <span className="font-heading text-xs font-bold tracking-widest uppercase text-primary whitespace-nowrap">START A PROJECT</span>
                             </div>
 
                             <h1 className="font-heading font-extrabold text-4xl md:text-5xl lg:text-7xl text-[#1E293B] leading-[1.1] tracking-tight">
@@ -150,20 +150,20 @@ const ContactHero = ({ isDark }) => {
                                 <motion.div
                                     animate={{ y: [0, -10, 0], scale: [1, 1.05, 1] }}
                                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                    className="absolute -top-12 -left-8 bg-[#1E293B] text-white px-6 py-4 rounded-3xl rounded-bl-none shadow-2xl z-20"
+                                    className="absolute -top-10 -left-2 md:-top-12 md:-left-8 bg-[#1E293B] text-white px-4 py-3 md:px-6 md:py-4 rounded-2xl md:rounded-3xl rounded-bl-none shadow-2xl z-20 shrink-0"
                                 >
-                                    <p className="font-bold text-sm">Let’s talk 👋</p>
+                                    <p className="font-bold text-xs md:text-sm whitespace-nowrap">Let’s talk 👋</p>
                                 </motion.div>
 
                                 {/* Floating Icons */}
-                                <motion.div animate={float(0)} className="absolute -top-6 -right-6 w-16 h-16 rounded-2xl bg-white shadow-2xl border border-primary/5 flex items-center justify-center text-[#25D366]">
-                                    <MessageCircle className="w-8 h-8" />
+                                <motion.div animate={float(0)} className="absolute -top-4 -right-2 md:-top-6 md:-right-6 w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white shadow-2xl border border-primary/5 flex items-center justify-center text-[#25D366] shrink-0">
+                                    <MessageCircle className="w-6 h-6 md:w-8 md:h-8 shrink-0" />
                                 </motion.div>
-                                <motion.div animate={float(1)} className="absolute top-1/2 -right-12 w-14 h-14 rounded-full bg-white shadow-2xl border border-primary/5 flex items-center justify-center text-accent">
-                                    <Mail className="w-7 h-7" />
+                                <motion.div animate={float(1)} className="absolute top-1/2 -right-4 md:-right-12 w-10 h-10 md:w-14 md:h-14 rounded-full bg-white shadow-2xl border border-primary/5 flex items-center justify-center text-accent shrink-0">
+                                    <Mail className="w-5 h-5 md:w-7 md:h-7 shrink-0" />
                                 </motion.div>
-                                <motion.div animate={float(0.5)} className="absolute bottom-10 -right-8 w-14 h-14 rounded-full bg-white shadow-2xl border border-primary/5 flex items-center justify-center text-primary">
-                                    <Phone className="w-7 h-7" />
+                                <motion.div animate={float(0.5)} className="absolute bottom-6 -right-2 md:bottom-10 md:-right-8 w-10 h-10 md:w-14 md:h-14 rounded-full bg-white shadow-2xl border border-primary/5 flex items-center justify-center text-primary shrink-0">
+                                    <Phone className="w-5 h-5 md:w-7 md:h-7 shrink-0" />
                                 </motion.div>
                             </motion.div>
 
